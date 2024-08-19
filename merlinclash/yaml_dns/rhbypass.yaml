@@ -1,0 +1,15 @@
+dns:
+  enable: true
+  ipv6: false
+  listen: :23453
+  enhanced-mode: redir-host
+  prefer-h3: true
+  nameserver-policy:
+    "geosite:cn": 
+      - 119.29.29.29
+      - 223.5.5.5
+  nameserver:
+    - https://public.dns.iij.jp/dns-query
+    - tcp://208.67.222.222:443
+    - tls://dns.google
+

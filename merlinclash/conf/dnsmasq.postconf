@@ -1,0 +1,73 @@
+#!/bin/sh
+
+source /jffs/softcenter/scripts/base.sh
+eval `dbus export merlinclash`
+alias echo_date='echo 【$(date +%Y年%m月%d日\ %X)】:'
+
+get(){
+	a=$(echo $(dbus get $1))
+	a=$(echo $(dbus get $1))
+	echo $a
+}
+
+yamlname=$(get merlinclash_yamlsel)
+yamlpath=/jffs/softcenter/merlinclash/yaml_use/$yamlname.yaml
+dnslistenport=$(cat $yamlpath | awk -F: '/listen/{print $3}' | xargs echo -n)
+mcenable=$(get merlinclash_enable)
+dnsplan=$(get merlinclash_dnsplan)
+
+detect_ip(){	
+	IPADDR=$1
+	regex_v4="\b(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[1-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[1-9])\b"
+	regex_v6="(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))"
+	ckStep4=`echo $1 | egrep $regex_v4 | wc -l`
+	ckStep6=`echo $1 | egrep $regex_v6 | wc -l`
+	if [ $ckStep4 -eq 0 ]; then
+		if [ $ckStep6 -eq 0 ]; then
+			return 1
+		else
+			return 6
+		fi
+	else
+		return 4
+	fi
+}
+
+perpare(){
+	[ -n "`cat /etc/dnsmasq.conf|grep no-resolv`" ] && sed -i '/no-resolv/d' /etc/dnsmasq.conf
+	[ -n "`cat /etc/dnsmasq.conf|grep servers-file`" ] && sed -i '/servers-file/d' /etc/dnsmasq.conf
+	[ -n "`cat /etc/dnsmasq.conf|grep dhcp-option-force=br1`" ] && sed -i '/dhcp-option-force=br1/d' /etc/dnsmasq.conf
+	[ -n "`cat /etc/dnsmasq.conf|grep dhcp-option-force=br2`" ] && sed -i '/dhcp-option-force=br2/d' /etc/dnsmasq.conf
+	# compatible with official mod dnsmasq-fastlookup
+	#[ -n "`cat /etc/dnsmasq.conf|grep script-arp`" ] && sed -i '/script-arp/d' /etc/dnsmasq.conf
+	# compatible with merlin dnsmasq-fastlookup
+	#[ -n "`cat /etc/dnsmasq.conf|grep dhcp-name-match`" ] && sed -i '/dhcp-name-match/d' /etc/dnsmasq.conf
+}
+	
+use_plan(){
+	if [ "$mcenable" == "1" ];then
+		sed -i '$a no-resolv' /etc/dnsmasq.conf
+		sed -i "\$a server=127.0.0.1#${dnslistenport}" /etc/dnsmasq.conf
+		if [ "$dnsplan" == "fi" ]; then			
+			nameservers=$(cat /tmp/resolv.conf | awk -F " " '/nameserver/{print $2}')
+			for nameserver in $nameservers; do
+			    detect_ip ${nameserver}
+				b=$?
+					if [ "$b" == "4" ]; then
+					#echo_date "为合法IPV4格式，进行处理" >> $LOG_FILE
+					echo "dhcp-option-force=br1,6,"${nameserver} >> /etc/dnsmasq.conf
+				    echo "dhcp-option-force=br2,6,"${nameserver} >> /etc/dnsmasq.conf
+					fi
+			done
+		fi 
+	else
+		#sed -i '$a no-resolv' /etc/dnsmasq.conf
+		#sed -i '$a servers-file=/tmp/resolv.dnsmasq' /etc/dnsmasq.conf
+		echo ""
+	fi	
+}
+
+
+perpare
+use_plan
+

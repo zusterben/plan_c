@@ -1,0 +1,469 @@
+/*COMMON CSS*/
+.popup_bar_bg_ks{
+	position:fixed;	
+	margin: auto;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	z-index:99;
+	filter:alpha(opacity=90);
+	background-repeat: repeat;
+	visibility:hidden;
+	overflow:hidden;
+	background: url(/images/New_ui/login_bg.png);
+	background-position: 0 0;
+	background-size: cover;
+	opacity: .94;
+}
+.sbar::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+.sbar::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background-color: #c3c3c3;
+}
+.sbar::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+.FormTitle {
+	table-layout:fixed;
+}
+.FormTitle i {
+	color: #FC0;
+	font-style: normal;
+}
+.FormTitle em {
+	color: #00ffe4;
+	font-style: normal;
+}
+.FormTitle b {
+	color: #1cfe16;
+	font-style: normal;
+	font-weight:normal;
+}
+input[type=button]:focus {
+	outline: none;
+}
+input[type=checkbox]{
+	vertical-align:middle;
+}
+#log_content3, #loading_block2 {line-height:1.5}
+.SimpleNote { padding:5px 10px;}
+.contentM_qis {
+	position: absolute;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 200;
+	margin-left: 50px;
+	top: 320px;
+	width:650px;
+	return height:auto;
+	box-shadow: 3px 3px 10px #000;
+	display:none;
+}
+.contentMKP_qis {
+	position: sticky;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius:10px;
+	z-index: 10;
+	background-color:#2B373B;
+	background-color:none;
+	margin-left: -215px;
+	top: 240px;
+	width:980px;
+	return height:auto;
+	box-shadow: 3px 3px 10px #000;
+	background: rgba(0,0,0,0.85);
+	display:none;
+}
+.content_status {
+	position: absolute;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius:10px;
+	z-index: 10;
+	margin-left: -215px;
+	top: 240px;
+	width:980px;
+	return height:auto;
+	box-shadow: 3px 3px 10px #000;
+	background: rgba(0,0,0,0.85);
+	display:none;
+}
+.user_title{
+	text-align:center;
+	font-size:18px;
+	color:#99FF00;
+	padding:10px;
+	font-weight:bold;
+}
+.list_table {
+	border: none;
+	border-collapse: collapse;
+	background-color:transparent;
+	text-align:center;
+	font-size:12px;
+	table-layout:fixed;
+}
+.list_table tr {
+	height:36px;
+}
+.list_table td {
+	border-left: none;
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid #FFF;
+	border-collapse: collapse;
+	font-family: Lucida Console;
+	height:25px;
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.input_option{
+	vertical-align:middle;
+	font-size:12px;
+}
+.input_option_2{
+	margin-left:2px;
+	padding-left:5px;
+	padding-right:5px;
+	height:21px;
+	width:152px;
+	line-height:23px \9;
+	font-size:12px;
+	font-family: Lucida Console;
+	background-image:none;
+	vertical-align:middle;
+	color:#FFFFFF;
+	outline: none;
+	text-align: center;
+	border:1px solid transparent;
+	background-color: transparent;
+}
+.sel_option{
+	height:25px;
+	color:#FFFFFF;
+	font-family: Lucida Console;
+	font-size:12px;
+	text-align: center;
+	text-align-last:center;
+	padding-left: 12px;
+	border:1px solid transparent;
+	background-color: transparent;
+}
+.FormTable_table{
+	margin-top:10px;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	border: none;
+	border-collapse: collapse;
+}
+.remove_btn{
+	background: transparent url(/res/accountdelete.png) no-repeat scroll center top;
+}
+.edit_btn{
+  background: transparent url(/res/accountedit.png) no-repeat scroll center top;
+}
+.add_btn{
+	background: transparent url(/res/accountadd.png) no-repeat scroll center top;
+}
+.cloud_main_radius h2 { border-bottom:1px #AAA dashed;}
+.cloud_main_radius h3 { font-size:12px;color:#FFF;font-weight:normal;font-style: normal;}
+.cloud_main_radius h4 { font-size:12px;color:#FC0;font-weight:normal;font-style: normal;}
+.cloud_main_radius h5 { color:#FFF;font-weight:normal;font-style: normal;}
+/*ASUSWRT*/
+#app[skin=ASUSWRT] .FormTable_table th{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	text-align:center;
+	font-size:12px;
+	height:25px;
+	border-collapse: collapse;
+	border: 0px solid transparent;
+	background:#2F3A3E;
+}
+#app[skin=ASUSWRT] .show-btn0, #app[skin=ASUSWRT] .show-btn1, #app[skin=ASUSWRT] .show-btn2, #app[skin=ASUSWRT] .show-btn3, #app[skin=ASUSWRT] .show-btn4, #app[skin=ASUSWRT] .show-btn5, #app[skin=ASUSWRT] .show-btn6, #app[skin=ASUSWRT] .show-btn7, #app[skin=ASUSWRT] .show-btn8, #app[skin=ASUSWRT] .show-btn9, #app[skin=ASUSWRT] .show-btn10, #app[skin=ASUSWRT] .sub-node1, #app[skin=ASUSWRT] .sub-node2 {
+	font-size:10pt;
+	color: #fff;
+	padding: 10px 3.75px;
+	border-radius: 5px 5px 0px 0px;
+	width:8.42%;
+	border-left: 1px solid #67767d;
+	border-top: 1px solid #67767d;
+	border-right: 1px solid #67767d;
+	border-bottom: none;
+	background: #67767d;
+}
+#app[skin=ASUSWRT] .show-btn0:hover, #app[skin=ASUSWRT] .show-btn1:hover, #app[skin=ASUSWRT] .show-btn2:hover, #app[skin=ASUSWRT] .show-btn3:hover, #app[skin=ASUSWRT] .show-btn4:hover, #app[skin=ASUSWRT] .show-btn5:hover, #app[skin=ASUSWRT] .show-btn6:hover, #app[skin=ASUSWRT] .show-btn7:hover, #app[skin=ASUSWRT] .show-btn8:hover, #app[skin=ASUSWRT] .show-btn9:hover, #app[skin=ASUSWRT] .show-btn10:hover, #app[skin=ASUSWRT] .sub-node1:hover, #app[skin=ASUSWRT] .sub-node2:hover, #app[skin=ASUSWRT] .active {
+	border: 1px solid #2f3a3e;
+	background: #2f3a3e;
+}
+#app[skin=ASUSWRT] #tablet_0, #app[skin=ASUSWRT] #tablet_2, #app[skin=ASUSWRT] #tablet_3, #app[skin=ASUSWRT] #tablet_4, #app[skin=ASUSWRT] #tablet_5, #app[skin=ASUSWRT] #tablet_6, #app[skin=ASUSWRT] #tablet_7, #app[skin=ASUSWRT] #tablet_8, #app[skin=ASUSWRT] #tablet_9, {
+	margin:-1px 0px 0px 0px;
+	border:none;
+}
+#app[skin=ASUSWRT] textarea{
+	width:97%;
+	padding-left:4px;
+	padding-right:37px;
+	font-family:'Lucida Console';
+	font-size:11px;
+	line-height:1.0;
+	color:#FFFFFF;
+	outline:none;
+	overflow-x:hidden;
+	border:none;
+	line-height: 1.5;
+	background: rgb(0 0 0 / 50%);
+}
+#app[skin=ASUSWRT] .mc_outline{
+	outline: 1px solid #222;
+}
+#app[skin=ASUSWRT] .input_option_2:hover, #app[skin=ASUSWRT] .input_option_2:focus{
+	outline: none;
+	border: 1px solid grey;
+	background-color:#576D73;
+}
+#app[skin=ASUSWRT] .sel_option:hover, #app[skin=ASUSWRT] .sel_option:focus{
+	outline: none;
+	border: 1px solid grey;
+	background-color:#576D73;
+}
+#app[skin=ASUSWRT] .sp_bottom_line{
+	border-bottom: none !important;
+}
+#app[skin=ASUSWRT] #merlinclash_links, #app[skin=ASUSWRT] #merlinclash_links2, #app[skin=ASUSWRT] #merlinclash_links3{
+	resize: none;
+	height: 100px;
+	width: 440px;
+	padding-top: 5px;
+	background-color: rgba(87,109,115,0.5);
+	border: 1px solid #222;
+	line-height:1.2;
+	word-break: break-all;
+	font-size: 10px;
+	padding-right: 0;
+}
+#app[skin=ASUSWRT] .FormTable {
+	outline: none;
+}
+/*ROG*/
+#app[skin=ROG] .FormTable_table th{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	text-align:center;
+	font-size:12px;
+	height:25px;
+	border-collapse: collapse;
+	border: none;
+	background: #91071f;
+}
+#app[skin=ROG] .show-btn0, #app[skin=ROG] .show-btn1, #app[skin=ROG] .show-btn2, #app[skin=ROG] .show-btn3, #app[skin=ROG] .show-btn4, #app[skin=ROG] .show-btn5, #app[skin=ROG] .show-btn6, #app[skin=ROG] .show-btn7, #app[skin=ROG] .show-btn8, #app[skin=ROG] .show-btn9, #app[skin=ROG] .show-btn10, #app[skin=ROG] .sub-node1, #app[skin=ROG] .sub-node2 {
+	font-size:10pt;
+	color: #fff;
+	padding: 10px 3.75px;
+	border-radius: 5px 5px 0px 0px;
+	width:8.42%;
+	border: 1px solid #91071f;
+	background: none;
+}
+#app[skin=ROG] .show-btn0:hover, #app[skin=ROG] .show-btn1:hover, #app[skin=ROG] .show-btn2:hover, #app[skin=ROG] .show-btn3:hover, #app[skin=ROG] .show-btn4:hover, #app[skin=ROG] .show-btn5:hover, #app[skin=ROG] .show-btn6:hover, #app[skin=ROG] .show-btn7:hover, #app[skin=ROG] .show-btn8:hover, #app[skin=ROG] .show-btn9:hover, #app[skin=ROG] .show-btn10:hover, #app[skin=ROG] .sub-node1:hover, #app[skin=ROG] .sub-node2:hover, #app[skin=ROG] .active {
+	border: 1px solid #91071f;
+	background: #91071f;
+}
+#app[skin=ROG] #tablet_0, #app[skin=ROG] #tablet_2, #app[skin=ROG] #tablet_3, #app[skin=ROG] #tablet_4, #app[skin=ROG] #tablet_5, #app[skin=ROG] #tablet_6, #app[skin=ROG] #tablet_7, #app[skin=ROG] #tablet_8, #app[skin=ROG] #tablet_9, {
+	margin:-1px 0px 0px 0px;
+	border:1px solid #91071f;
+}
+#app[skin=ROG] textarea{
+	width:97%;
+	padding-left:4px;
+	padding-right:37px;
+	font-family:'Lucida Console';
+	font-size:11px;
+	line-height:1.0;
+	color:#FFFFFF;
+	outline:none;
+	overflow-x:hidden;
+	border:none;
+	line-height: 1.5;
+	background:transparent;
+}
+#app[skin=ROG] .mc_outline{
+	outline: 1px solid #91071f;
+}
+#app[skin=ROG] .input_option_2:hover, #app[skin=ROG] .input_option_2:focus{
+	border:1px solid #91071f;
+	background-color: #3e030d;
+}
+#app[skin=ROG] .sel_option:hover, #app[skin=ROG] .sel_option:focus{
+	border:1px solid #91071f;
+	background-color: #3e030d;
+}
+#app[skin=ROG] .sp_bottom_line{
+	border-bottom: 1px solid #91071f !important;
+}
+#app[skin=ROG] #merlinclash_links, #app[skin=ROG] #merlinclash_links2, #app[skin=ROG] #merlinclash_links3{
+	resize: none;
+	height: 100px;
+	width: 440px;
+	padding-top: 5px;
+	background-color: rgb(0 0 0 / 50%);
+	border: 1px solid #91071f;
+	line-height:1.2;
+	word-break: break-all;
+	font-size: 10px;
+	padding-right: 0;
+}
+#app[skin=ROG] .FormTable {
+	outline: 1px solid #91071f;
+}
+/*TUF*/
+#app[skin=TUF] .FormTable_table th{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	text-align:center;
+	font-size:12px;
+	height:25px;
+	border-collapse: collapse;
+	border: none;
+	background: #92650F;
+}
+#app[skin=TUF] .show-btn0, #app[skin=TUF] .show-btn1, #app[skin=TUF] .show-btn2, #app[skin=TUF] .show-btn3, #app[skin=TUF] .show-btn4, #app[skin=TUF] .show-btn5, #app[skin=TUF] .show-btn6, #app[skin=TUF] .show-btn7, #app[skin=TUF] .show-btn8, #app[skin=TUF] .show-btn9, #app[skin=TUF] .show-btn10, #app[skin=TUF] .sub-node1, #app[skin=TUF] .sub-node2 {
+	font-size:10pt;
+	color: #fff;
+	padding: 10px 3.75px;
+	border-radius: 5px 5px 0px 0px;
+	width:8.42%;
+	border: 1px solid #92650F;
+	background: none;
+}
+#app[skin=TUF] .show-btn0:hover, #app[skin=TUF] .show-btn1:hover, #app[skin=TUF] .show-btn2:hover, #app[skin=TUF] .show-btn3:hover, #app[skin=TUF] .show-btn4:hover, #app[skin=TUF] .show-btn5:hover, #app[skin=TUF] .show-btn6:hover, #app[skin=TUF] .show-btn7:hover, #app[skin=TUF] .show-btn8:hover, #app[skin=TUF] .show-btn9:hover, #app[skin=TUF] .show-btn10:hover, #app[skin=TUF] .sub-node1:hover, #app[skin=TUF] .sub-node2:hover, #app[skin=TUF] .active {
+	border: 1px solid #92650F;
+	background: #92650F;
+}
+#app[skin=TUF] #tablet_0, #app[skin=TUF] #tablet_2, #app[skin=TUF] #tablet_3, #app[skin=TUF] #tablet_4, #app[skin=TUF] #tablet_5, #app[skin=TUF] #tablet_6, #app[skin=TUF] #tablet_7, #app[skin=TUF] #tablet_8, #app[skin=TUF] #tablet_9, {
+	margin:-1px 0px 0px 0px;
+	border:1px solid #92650F;
+}
+#app[skin=TUF] textarea{
+	width:97%;
+	padding-left:4px;
+	padding-right:37px;
+	font-family:'Lucida Console';
+	font-size:11px;
+	line-height:1.0;
+	color:#FFFFFF;
+	outline:none;
+	overflow-x:hidden;
+	border:none;
+	line-height: 1.5;
+	background:transparent;
+}
+#app[skin=TUF] .mc_outline{
+	outline: 1px solid #92650F;
+}
+#app[skin=TUF] .input_option_2:hover, #app[skin=TUF] .input_option_2:focus{
+	border:1px solid #92650F;
+	background-color: #3e2902;
+}
+#app[skin=TUF] .sel_option:hover, #app[skin=TUF] .sel_option:focus{
+	border:1px solid #92650F;
+	background-color: #3e2902;
+}
+#app[skin=TUF] .sp_bottom_line{
+	border-bottom: 1px solid #92650F !important;
+}
+#app[skin=TUF] #merlinclash_links, #app[skin=TUF] #merlinclash_links2, #app[skin=TUF] #merlinclash_links3{
+	resize: none;
+	height: 100px;
+	width: 440px;
+	padding-top: 5px;
+	background-color: rgb(0 0 0 / 50%);
+	border: 1px solid #92650F;
+	line-height:1.2;
+	word-break: break-all;
+	font-size: 10px;
+	padding-right: 0;
+}
+#app[skin=TUF] .FormTable {
+	outline: 1px solid #92650F;
+}
+/*TS*/
+#app[skin=TS] .FormTable_table th{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	text-align:center;
+	font-size:12px;
+	height:25px;
+	border-collapse: collapse;
+	border: none;
+	background: #2ed9c3;
+}
+#app[skin=TS] .show-btn0, #app[skin=TS] .show-btn1, #app[skin=TS] .show-btn2, #app[skin=TS] .show-btn3, #app[skin=TS] .show-btn4, #app[skin=TS] .show-btn5, #app[skin=TS] .show-btn6, #app[skin=TS] .show-btn7, #app[skin=TS] .show-btn8, #app[skin=TS] .show-btn9, #app[skin=TS] .show-btn10, #app[skin=TS] .sub-node1, #app[skin=TS] .sub-node2 {
+	font-size:10pt;
+	color: #fff;
+	padding: 10px 3.75px;
+	border-radius: 5px 5px 0px 0px;
+	width:8.42%;
+	border: 1px solid #2ed9c3;
+	background: none;
+}
+#app[skin=TS] .show-btn0:hover, #app[skin=TS] .show-btn1:hover, #app[skin=TS] .show-btn2:hover, #app[skin=TS] .show-btn3:hover, #app[skin=TS] .show-btn4:hover, #app[skin=TS] .show-btn5:hover, #app[skin=TS] .show-btn6:hover, #app[skin=TS] .show-btn7:hover, #app[skin=TS] .show-btn8:hover, #app[skin=TS] .show-btn9:hover, #app[skin=TS] .show-btn10:hover, #app[skin=TS] .sub-node1:hover, #app[skin=TS] .sub-node2:hover, #app[skin=TS] .active {
+	border: 1px solid #2ed9c3;
+	background: #2ed9c3;
+}
+#app[skin=TS] #tablet_0, #app[skin=TS] #tablet_2, #app[skin=TS] #tablet_3, #app[skin=TS] #tablet_4, #app[skin=TS] #tablet_5, #app[skin=TS] #tablet_6, #app[skin=TS] #tablet_7, #app[skin=TS] #tablet_8, #app[skin=TS] #tablet_9, {
+	margin:-1px 0px 0px 0px;
+	border:1px solid #2ed9c3;
+}
+#app[skin=TS] textarea{
+	width:97%;
+	padding-left:4px;
+	padding-right:37px;
+	font-family:'Lucida Console';
+	font-size:11px;
+	line-height:1.0;
+	color:#FFFFFF;
+	outline:none;
+	overflow-x:hidden;
+	border:none;
+	line-height: 1.5;
+	background:transparent;
+}
+#app[skin=TS] .mc_outline{
+	outline: 1px solid #2ed9c3;
+}
+#app[skin=TS] .input_option_2:hover, #app[skin=TS] .input_option_2:focus{
+	border:1px solid #2ed9c3;
+	background-color: #3e2902;
+}
+#app[skin=TS] .sel_option:hover, #app[skin=TS] .sel_option:focus{
+	border:1px solid #2ed9c3;
+	background-color: #3e2902;
+}
+#app[skin=TS] .sp_bottom_line{
+	border-bottom: 1px solid #2ed9c3 !important;
+}
+#app[skin=TS] #merlinclash_links, #app[skin=TS] #merlinclash_links2, #app[skin=TS] #merlinclash_links3{
+	resize: none;
+	height: 100px;
+	width: 440px;
+	padding-top: 5px;
+	background-color: rgb(0 0 0 / 50%);
+	border: 1px solid #2ed9c3;
+	line-height:1.2;
+	word-break: break-all;
+	font-size: 10px;
+	padding-right: 0;
+}
+#app[skin=TS] .FormTable {
+	outline: 1px solid #2ed9c3;
+}
