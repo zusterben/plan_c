@@ -19,7 +19,7 @@ updateflag=""
 
 Regularlog=/tmp/upload/merlinclash_regular.log
 #rm -rf $Regularlog
-
+local_domain=$(nvram get local_domain)
 
 get(){
 	a=$(echo $(dbus get $1))
@@ -286,18 +286,18 @@ start_online_update_hnd(){
 			;;
 		esac
 		subscription_type="4"
-		links="http://127.0.0.1:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2F${acl4ssrsel}.ini&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
+		links="http://${local_domain}:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2F${acl4ssrsel}.ini&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
 	else
 		acl4ssrsel=$(get merlinclash_acl4ssrsel_cus)
 		_name="CUS_"
 		subscription_type="6"
-		links="http://127.0.0.1:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=customconfig%2F${acl4ssrsel}.ini&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
+		links="http://${local_domain}:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=customconfig%2F${acl4ssrsel}.ini&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
 	fi
 	if [ "$URLflag" == "1" ]; then
 		_name="MY_"
 		urlinilink=$(dbus get merlinclash_uploadiniurl)
 		urlinilink=$(decode_url_link $urlinilink)
-		links="http://127.0.0.1:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=${urlinilink}&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
+		links="http://${local_domain}:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=${urlinilink}&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
 		dbus set merlinclash_customrule_cbox="0"
 		subscription_type="7"
 		customrule=$(dbus get merlinclash_customrule_cbox)
@@ -521,7 +521,7 @@ start_dc_online_update_hnd(){
 				_name="MMC_"
 				;;
 			esac
-			links="http://127.0.0.1:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2F${acl4ssrsel}.ini&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo"
+			links="http://${local_domain}:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2F${acl4ssrsel}.ini&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo"
 		else
 			echo_date "订阅规则类型是：远程订阅"
 			echo_date "subconverter进程：$(pidof subconverter)" >> $LOG_FILE
@@ -531,7 +531,7 @@ start_dc_online_update_hnd(){
 			urlinilink=$(dbus get merlinclash_dc_uploadiniurl)
 			urlinilink=$(decode_url_link $urlinilink)
 			echo_date "远程配置的地址是：$urlinilink" >> $LOG_FILE
-			links="http://127.0.0.1:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=${urlinilink}&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo"
+			links="http://${local_domain}:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=${urlinilink}&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo"
 			dbus set merlinclash_customrule_cbox="0"
 			subscription_type="7"
 			customrule="0"
@@ -733,13 +733,13 @@ start_regular_update_hnd(){
 			_name="MMC_"
 			;;
 		esac
-		links="http://127.0.0.1:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2F${acltype_tmp}.ini&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
+		links="http://${local_domain}:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2F${acltype_tmp}.ini&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
 	elif [ "$subscription_type" == "6" ]; then
 		_name="CUS_"
-		links="http://127.0.0.1:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=customconfig%2F${acltype_tmp}.ini&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
+		links="http://${local_domain}:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=customconfig%2F${acltype_tmp}.ini&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
 	else
 		_name="MY_"
-		links="http://127.0.0.1:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=${urlinilink}&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
+		links="http://${local_domain}:25500/sub?target=$clashtarget&new_name=true&url=$merlinc_link&insert=false&config=${urlinilink}&include=$include&exclude=$exclude&append_type=$appendtype&emoji=$emoji&udp=$udp&fdn=$fdn&sort=$sort&scv=$scv&tfo=$tfo&xudp=$xudp"
 		dbus set merlinclash_customrule_cbox="0"
 		subscription_type="7"
 		customrule=$(dbus get merlinclash_customrule_cbox)

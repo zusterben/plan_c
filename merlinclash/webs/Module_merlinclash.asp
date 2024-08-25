@@ -1509,26 +1509,50 @@ function get_sniffer_content() {
 		}
 	});
 }
-function get_clash_status_front() {
-	if (db_merlinclash['merlinclash_enable'] != "1") {
-		E("clash_state1").innerHTML = "Clash启动时间 - " + "Waiting...";
-		E("clash_state2").innerHTML = "Clash进程 - " + "Waiting...";
-		E("clash_state3").innerHTML = "实时守护进程 - " + "Waiting...";
-		E("clash_state4").innerHTML = "Dns2Socks进程 - " + "Waiting...";
-		E("dashboard_state2").innerHTML = "管理面板";
-		E("dashboard_state4").innerHTML = "面板密码";
-		return false;
-	}
-	var id = parseInt(Math.random() * 100000000);
-	var postData = {"id": id, "method": "clash_status.sh", "params":[], "fields": ""};
-	intoQueue({
+
+function get_clash_status2_front2(id) {
+	$.ajax({
 		type: "POST",
-		url: "/_api/",
 		async: true,
-		data: JSON.stringify(postData),
+		cache:false,
+		url: "/_result/"+id,
 		dataType: "json",
 		success: function(response) {
-			//console.log(init_count);
+			if (typeof response.result == "number"){
+				setTimeout("get_clash_status2_front2("+response.result+");", 1000);
+			}
+			else {
+				var arr = response.result.split("@");
+				//console.log(arr);
+				if (arr[0] == "" || arr[1] == "") {
+					E("clash_state1").innerHTML = "clash启动时间 - " + "Waiting for first refresh...";
+					E("clash_state2").innerHTML = "clash进程 - " + "Waiting for first refresh...";
+					E("clash_state3").innerHTML = "实时守护进程 - " + "Waiting for first refresh...";
+					E("clash_state4").innerHTML = "Dns2Socks进程 - " + "Waiting for first refresh...";
+				} else {
+					E("clash_state1").innerHTML = arr[2];
+					E("clash_state2").innerHTML = arr[0];
+					E("clash_state3").innerHTML = arr[1];
+					E("clash_state4").innerHTML = arr[3];
+					E("patch_version").innerHTML = arr[4];
+				}
+			}
+		}
+	});
+}
+
+function get_clash_status_front2(id) {
+	$.ajax({
+		type: "POST",
+		async: true,
+		cache:false,
+		url: "/_result/"+id,
+		dataType: "json",
+		success: function(response) {
+			if (typeof response.result == "number"){
+				setTimeout("get_clash_status_front2("+response.result+");", 1000);
+			}
+			else {
 			if (init_count==0){
 				var arr = response.result.split("@");
 				if (arr[0] == "" || arr[1] == "") {
@@ -1613,6 +1637,10 @@ function get_clash_status_front() {
 					dataType: "json",
 					success: function(response) {
 						//console.log(init_count);
+						if (typeof response.result == "number"){
+							setTimeout("get_clash_status2_front2("+response.result+");", 1000);
+						}
+						else {
 						var arr = response.result.split("@");
 						//console.log(arr);
 						if (arr[0] == "" || arr[1] == "") {
@@ -1627,10 +1655,147 @@ function get_clash_status_front() {
 							E("clash_state4").innerHTML = arr[3];
 							E("patch_version").innerHTML = arr[4];
 						}
+						}
 					}
 				});
 			}
 		setTimeout("get_clash_status_front();", 5000);
+			}
+		}
+	});
+}
+function get_clash_status_front() {
+	if (db_merlinclash['merlinclash_enable'] != "1") {
+		E("clash_state1").innerHTML = "Clash启动时间 - " + "Waiting...";
+		E("clash_state2").innerHTML = "Clash进程 - " + "Waiting...";
+		E("clash_state3").innerHTML = "实时守护进程 - " + "Waiting...";
+		E("clash_state4").innerHTML = "Dns2Socks进程 - " + "Waiting...";
+		E("dashboard_state2").innerHTML = "管理面板";
+		E("dashboard_state4").innerHTML = "面板密码";
+		return false;
+	}
+	var id = parseInt(Math.random() * 100000000);
+	var postData = {"id": id, "method": "clash_status.sh", "params":[], "fields": ""};
+	intoQueue({
+		type: "POST",
+		url: "/_api/",
+		async: true,
+		data: JSON.stringify(postData),
+		dataType: "json",
+		success: function(response) {
+			//console.log(init_count);
+			if (typeof response.result == "number"){
+				setTimeout("get_clash_status_front2("+response.result+");", 1000);
+			}
+			else {
+			if (init_count==0){
+				var arr = response.result.split("@");
+				if (arr[0] == "" || arr[1] == "") {
+					E("clash_state1").innerHTML = "clash启动时间 - " + "Waiting for first refresh...";
+					E("clash_state2").innerHTML = "clash进程 - " + "Waiting for first refresh...";
+					E("clash_state3").innerHTML = "实时守护进程 - " + "Waiting for first refresh...";
+					E("clash_state4").innerHTML = "Dns2Socks进程 - " + "Waiting for first refresh...";
+					E("dashboard_state2").innerHTML = "管理面板";
+					E("dashboard_state4").innerHTML = "面板密码";
+				} else {
+					E("clash_state1").innerHTML = arr[18];
+					E("clash_state2").innerHTML = arr[0];
+					E("clash_state3").innerHTML = arr[1];
+					E("clash_state4").innerHTML = arr[19];
+					//$("#yacd").html("<a type='button' href='http://"+ location.hostname + ":" +arr[3]+ "/ui/yacd/index.html?hostname=" + location.hostname + "&port=" + arr[3] + "&secret=" + arr[16] +"'" + " target='_blank' >访问 YACD-Clash 面板</a>");
+					//$("#razord").html("<a type='button' href='http://"+ location.hostname + ":" +arr[3]+ "/ui/razord/index.html' target='_blank' >访问 RAZORD-Clash 面板</a>");
+					E("dashboard_state2").innerHTML = arr[5];
+					E("dashboard_state4").innerHTML = arr[15];
+					yamlsel_tmp2 = arr[7];
+					E("merlinclash_unblockmusic_version").innerHTML = arr[8];
+					E("merlinclash_unblockmusic_status").innerHTML = arr[9];
+					//E("proxygroup_version").innerHTML = arr[10];
+					//E("patch_version").innerHTML = arr[12];
+					//E("patch_version2").innerHTML = arr[17];
+					
+					//获取后台返回的IP
+					E("ip-ipipnet").innerHTML = arr[20];
+					E("ip-ipapi").innerHTML = arr[21];
+					E("http-baidu").innerHTML = arr[22] == "连通正常" ? '<span style="color:#6C0">连接正常</span>' :'<span style="color:#ff0000">连接失败</span>';
+					<!--E("http-github").innerHTML = arr[23] == "连通正常" ? '<span style="color:#6C0">连接正常</span>' :'<span style="color:#ff0000">连接失败</span>';-->
+					E("http-google").innerHTML = arr[23] == "连通正常" ? '<span style="color:#6C0">连接正常</span>' :'<span style="color:#ff0000">连接失败</span>';
+					//获取结束
+					
+					if(db_merlinclash["merlinclash_flag"] == "HND"){
+						E("sc_version").innerHTML = arr[13];
+					}
+					if(db_merlinclash["merlinclash_flag"] != "OTH"){
+						var port = arr[3];
+						var protocol = location.protocol;
+						var yacdHref,razordHref;
+						var hostname = document.domain;
+						if (hostname.indexOf('.kooldns.cn') != -1 || hostname.indexOf('.ddnsto.com') != -1 || hostname.indexOf('.tocmcc.cn') != -1) {
+							var protocol = location.protocol;
+							if(hostname.indexOf('.kooldns.cn') != -1){
+								hostname = hostname.replace('.kooldns.cn','-clash.kooldns.cn');
+							}else if(hostname.indexOf('.ddnsto.com') != -1){
+								hostname = hostname.replace('.ddnsto.com','-clash.ddnsto.com');
+							}else{
+								hostname = hostname.replace('.tocmcc.cn','-clash.tocmcc.cn');
+							}
+
+							if(protocol == "https:")
+							{
+								port = 443;
+							}else{
+								port = 5000;
+							}
+							yacdHref   =  protocol + '//' + hostname + "/ui/yacd/index.html?hostname=" + protocol + "//" + hostname + "&port=" + port + "&secret=" + arr[16];
+							razordHref =  protocol + '//' + hostname + "/ui/metacubexd/#/setup?hostname=" + hostname + "&port=" + port + "&secret=" + arr[16];
+						}else{
+							yacdHref   = "http://"+ location.hostname + ":" +arr[3]+ "/ui/yacd/index.html?hostname=" + location.hostname + "&port=" + arr[3] + "&secret=" + arr[16];
+							razordHref = "http://"+ location.hostname + ":" +arr[3]+ "/ui/metacubexd/#/setup?hostname=" + location.hostname + "&port=" + arr[3] + "&secret=" + arr[16];
+						}
+
+						$("#yacd").html("<a type='button' style='vertical-align: middle; cursor:pointer;' class='ks_btn' href='" + yacdHref + "' target='_blank' >访问 YACD-Clash 面板</a>");
+						$("#razord").html("<a type='button' style='vertical-align: middle; cursor:pointer;' class='ks_btn' href='"+ razordHref + "' target='_blank' >访问 MetaCubeXD-Clash 面板</a>");
+					}else{
+						$("#yacd").html("<a type='button' style='vertical-align: middle; cursor:pointer;' id='yacd' class='ks_btn' href='http://yacd.metacubex.one/?hostname=" + location.hostname + "&port=" + arr[3] + "&secret=" + arr[16] +"'" + " target='_blank' >访问 YACD-Clash 面板</a>");
+						$("#razord").html("<a type='button' style='vertical-align: middle; cursor:pointer;' class='ks_btn' id='razord' href='http://metacubexd.pages.dev/#/setup?hostname=" + location.hostname + "&port=" + arr[3] + "&secret=" + arr[16] +"'" + " target='_blank'' >访问 MetaCubeXD-Clash 面板</a>");
+					}
+					E("clash_yamlsel").innerHTML = arr[14];
+				}
+				init_count = 1;
+			} else {
+				var id2 = parseInt(Math.random() * 100000000);
+				var postData = {"id": id2, "method": "clash_status2.sh", "params":[], "fields": ""};
+				intoQueue({
+					type: "POST",
+					url: "/_api/",
+					async: true,
+					data: JSON.stringify(postData),
+					dataType: "json",
+					success: function(response) {
+						//console.log(init_count);
+						if (typeof response.result == "number"){
+							setTimeout("get_clash_status2_front2("+response.result+");", 1000);
+						}
+						else {
+						var arr = response.result.split("@");
+						//console.log(arr);
+						if (arr[0] == "" || arr[1] == "") {
+							E("clash_state1").innerHTML = "clash启动时间 - " + "Waiting for first refresh...";
+							E("clash_state2").innerHTML = "clash进程 - " + "Waiting for first refresh...";
+							E("clash_state3").innerHTML = "实时守护进程 - " + "Waiting for first refresh...";
+							E("clash_state4").innerHTML = "Dns2Socks进程 - " + "Waiting for first refresh...";
+						} else {
+							E("clash_state1").innerHTML = arr[2];
+							E("clash_state2").innerHTML = arr[0];
+							E("clash_state3").innerHTML = arr[1];
+							E("clash_state4").innerHTML = arr[3];
+							E("patch_version").innerHTML = arr[4];
+						}
+						}
+					}
+				});
+			}
+		setTimeout("get_clash_status_front();", 5000);
+			}
 		}
 	});
 }
@@ -2840,26 +3005,18 @@ function dc_logout() {
 
 }
 //初始化页面时决定栏目显示哪个div层
-function dc_init() {
-	//初次未登录，显示登陆栏，此时token为空。
-	if(db_merlinclash["merlinclash_dc_token"] == "" || db_merlinclash["merlinclash_dc_token"] == null){
-		$('#dlercloud_login').show();
-		$('#dlercloud_content').hide();
-		return false;
-	}
-	//token失效，退回登陆栏；有效则重新获取最新的套餐信息
-	if(db_merlinclash["merlinclash_dc_token"]){
-		var dbus_post = {};
-		var arg="token"
-		var id = parseInt(Math.random() * 100000000);
-		var postData = {"id": id, "method": "clash_dclogin.sh", "params":[arg], "fields": dbus_post};
-		intoQueue({
-			type: "POST",
-			url: "/_api/",
-			async: true,
-			data: JSON.stringify(postData),
-			dataType: "json",
-			success: function(response) {
+function dc_init2(id){
+	$.ajax({
+		type: "POST",
+		async: true,
+		cache:false,
+		url: "/_result/"+id,
+		dataType: "json",
+		success: function(response) {
+			if (typeof response.result == "number"){
+				setTimeout("dc_init2("+response.result+");", 1000);
+			}
+			else {
 				var arr = response.result.split("@@");
 				if (arr[0] != "200"){
 					alert("DlerCloud用户/密码错，请重新登陆");
@@ -2883,6 +3040,59 @@ function dc_init() {
 					$('#dlercloud_content').show();
 					dc_info_show();
 					return false;
+				}
+			}
+		}
+	});
+}
+function dc_init() {
+	//初次未登录，显示登陆栏，此时token为空。
+	if(db_merlinclash["merlinclash_dc_token"] == "" || db_merlinclash["merlinclash_dc_token"] == null){
+		$('#dlercloud_login').show();
+		$('#dlercloud_content').hide();
+		return false;
+	}
+	//token失效，退回登陆栏；有效则重新获取最新的套餐信息
+	if(db_merlinclash["merlinclash_dc_token"]){
+		var dbus_post = {};
+		var arg="token"
+		var id = parseInt(Math.random() * 100000000);
+		var postData = {"id": id, "method": "clash_dclogin.sh", "params":[arg], "fields": dbus_post};
+		intoQueue({
+			type: "POST",
+			url: "/_api/",
+			async: true,
+			data: JSON.stringify(postData),
+			dataType: "json",
+			success: function(response) {
+				if (typeof response.result == "number"){
+					setTimeout("dc_init2("+response.result+");", 1000);
+				}
+				else {
+				var arr = response.result.split("@@");
+				if (arr[0] != "200"){
+					alert("DlerCloud用户/密码错，请重新登陆");
+					$('#dlercloud_login').show();
+					$('#dlercloud_content').hide();
+					return false;
+				} else{
+					E("dc_name").innerHTML = arr[1];
+					E("dc_token").innerHTML = arr[10];
+					E("dc_money").innerHTML = arr[4];
+					E("dc_affmoney").innerHTML = arr[11];
+					E("dc_integral").innerHTML = arr[12];
+					E("dc_plan").innerHTML = arr[2];
+					E("dc_plantime").innerHTML = arr[3];
+					E("dc_usedTraffic").innerHTML = arr[5];
+					E("dc_unusedTraffic").innerHTML = arr[6];
+					E("dc_ss").innerHTML = arr[7];
+					E("dc_v2").innerHTML = arr[8];
+					E("dc_trojan").innerHTML = arr[9];
+					$('#dlercloud_login').hide();
+					$('#dlercloud_content').show();
+					dc_info_show();
+					return false;
+				}
 				}
 			}
 		});
@@ -2909,19 +3119,18 @@ function dc_info() {
 	$('#dlercloud_content').show();
 
 }
-
-function dc_info_show() {
-	var dbus_post = {};
-	var arg="info"
-	var id = parseInt(Math.random() * 100000000);
-	var postData = {"id": id, "method": "clash_dclogin.sh", "params":[arg], "fields": dbus_post};
-	intoQueue({
+function dc_info_show2(id){
+	$.ajax({
 		type: "POST",
-		url: "/_api/",
 		async: true,
-		data: JSON.stringify(postData),
+		cache:false,
+		url: "/_result/"+id,
 		dataType: "json",
 		success: function(response) {
+			if (typeof response.result == "number"){
+				setTimeout("dc_info_show2("+response.result+");", 1000);
+			}
+			else {
 			var arr = response.result.split("@@");
 			if (arr[0] != "200"){
 				alert(arr[0]);
@@ -2940,6 +3149,46 @@ function dc_info_show() {
 				E("dc_v2").innerHTML = arr[8];
 				E("dc_trojan").innerHTML = arr[9];
 
+			}
+			}
+		}
+	});
+}
+function dc_info_show() {
+	var dbus_post = {};
+	var arg="info"
+	var id = parseInt(Math.random() * 100000000);
+	var postData = {"id": id, "method": "clash_dclogin.sh", "params":[arg], "fields": dbus_post};
+	intoQueue({
+		type: "POST",
+		url: "/_api/",
+		async: true,
+		data: JSON.stringify(postData),
+		dataType: "json",
+		success: function(response) {
+			if (typeof response.result == "number"){
+				setTimeout("dc_info_show2("+response.result+");", 1000);
+			}
+			else {
+			var arr = response.result.split("@@");
+			if (arr[0] != "200"){
+				alert(arr[0]);
+				return false;
+			} else{
+				E("dc_name").innerHTML = arr[1];
+				E("dc_token").innerHTML = arr[10];
+				E("dc_money").innerHTML = arr[4];
+				E("dc_affmoney").innerHTML = arr[11];
+				E("dc_integral").innerHTML = arr[12];
+				E("dc_plan").innerHTML = arr[2];
+				E("dc_plantime").innerHTML = arr[3];
+				E("dc_usedTraffic").innerHTML = arr[5];
+				E("dc_unusedTraffic").innerHTML = arr[6];
+				E("dc_ss").innerHTML = arr[7];
+				E("dc_v2").innerHTML = arr[8];
+				E("dc_trojan").innerHTML = arr[9];
+
+			}
 			}
 		}
 	});

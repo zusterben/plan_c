@@ -35,7 +35,7 @@ prepare(){
 	#[ -n "`cat /etc/dnsmasq.conf|grep dhcp-name-match`" ] && sed -i '/dhcp-name-match/d' /etc/dnsmasq.conf
 }
 
-case $ACTION in
+case $1 in
 start)
     rm -rf /jffs/scripts/dnsmasq.postconf
     prepare

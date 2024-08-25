@@ -58,7 +58,7 @@ decode_url_link(){
 
 
 start_online_update(){
-	
+	local_domain=$(nvram get local_domain)
 	updateflag="start_online_update"
 	links2=$(get merlinclash_links2)
 	links=$(decode_url_link $links2)
@@ -72,8 +72,9 @@ start_online_update(){
 	echo_date "即将开始转换，需要一定时间，请等候处理" >> $LOG_FILE
 	sleep 3s
 	_name="Ne_"
-	links="http://127.0.0.1:25500/sub?target=clash&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2FZHANG.ini&include=&exclude=&append_type=false&emoji=true&udp=false&fdn=true&sort=true&scv=false&tfo=false"
-	
+#华硕安全措施禁止curl访问非域名
+#	links="http://127.0.0.1:25500/sub?target=clash&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2FZHANG.ini&include=&exclude=&append_type=false&emoji=true&udp=false&fdn=true&sort=true&scv=false&tfo=false"
+	links="http://${local_domain}:25500/sub?target=clash&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2FZHANG.ini&include=&exclude=&append_type=false&emoji=true&udp=false&fdn=true&sort=true&scv=false&tfo=false"
 	echo_date "生成订阅链接：$links" >> $LOG_FILE
 	if [ -n "$upname_tmp" ]; then
 		upname="$_name$upname_tmp.yaml"
@@ -82,7 +83,7 @@ start_online_update(){
 	fi
 			UA='Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36'
 			echo_date "使用常规网络下载..." >> $LOG_FILE
-			curl -4sSk --user-agent "$UA" --connect-timeout 30 "$links" > /tmp/upload/$upname
+			curl -4sSk --user-agent "$UA" --connect-timeout 30 "$links" $upname
 			echo_date "配置文件下载完成" >>$LOG_FILE
 			#虽然为0但是还是要检测下是否下载到正确的内容
 			if [ "$?" == "0" ];then
@@ -160,7 +161,7 @@ start_regular_update(){
 	merlinc_link=""
 	upname=""
 	subscription_type=""
-		
+	local_domain=$(nvram get local_domain)
 	merlinc_link=$(echo $3 | sed 's/%0A/%7C/g')
 	upname_tmp=$1
 	subscription_type="2"
@@ -171,7 +172,9 @@ start_regular_update(){
 	echo_date "即将开始转换，需要一定时间，请等候处理" >> $Regularlog
 	sleep 3s
 	_name="Ne_"
-	links="http://127.0.0.1:25500/sub?target=clash&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2FZHANG.ini&include=&exclude=&append_type=false&emoji=true&udp=false&fdn=true&sort=true&scv=false&tfo=false"
+#华硕安全措施禁止curl访问非域名
+#	links="http://127.0.0.1:25500/sub?target=clash&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2FZHANG.ini&include=&exclude=&append_type=false&emoji=true&udp=false&fdn=true&sort=true&scv=false&tfo=false"
+	links="http://${local_domain}:25500/sub?target=clash&new_name=true&url=$merlinc_link&insert=false&config=ruleconfig%2FZHANG.ini&include=&exclude=&append_type=false&emoji=true&udp=false&fdn=true&sort=true&scv=false&tfo=false"
 	
 	echo_date "生成订阅链接：$links" >> $Regularlog
 	upname="${_name}${upname_tmp}.yaml"
@@ -467,7 +470,7 @@ case $2 in
 	if [ "$mcflag" == "HND" ]; then
 		echo "" > $LOG_FILE
 		http_response "$1"
-		echo_date "小白一键转换订阅HND" >> $LOG_FILE
+		echo_date "小白一键转换订阅" >> $LOG_FILE
 		#20200802启动subconverter进程
 		/jffs/softcenter/bin/subconverter >/dev/null 2>&1 &
 		start_online_update >> $LOG_FILE

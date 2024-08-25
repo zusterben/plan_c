@@ -1,10 +1,10 @@
 {
-"build_date":"2024-08-19_08:14:03",
+"build_date":"2024-08-25_18:04:17",
 "description":"Merlin Clash",
 "home_url":"Module_merlinclash.asp",
-"md5":"3617d8e9c4f0213cd08d80746dcd474e",
+"md5":"b92fd3451c2b6c29986e47661777948c",
 "name":"merlinclash",
 "tar_url": "https://raw.githubusercontent.com/zusterben/plan_c/master/bin/mips/merlinclash.tar.gz", 
 "title":"Merlin Clash",
-"version":"24.08.04"
+"version":"24.08.25"
 }
