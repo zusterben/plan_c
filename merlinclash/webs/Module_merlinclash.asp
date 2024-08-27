@@ -1104,7 +1104,8 @@ function push_data(script, arg, obj, flag){
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response){
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				if(flag && flag == "1"){
 					refreshpage();
 				}else if(flag && flag == "2"){
@@ -1814,7 +1815,8 @@ function get_proc_status() {
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				write_proc_status();
 			}
 		}
@@ -2106,7 +2108,8 @@ function down_clashdata(arg) {
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response){
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				if(arg == 1){
 					var downloadA = document.createElement('a');
 					var josnData = {};
@@ -2187,7 +2190,8 @@ function down_clashrestorerule(arg) {
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response){
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				if(arg == 1){
 					var downloadA = document.createElement('a');
 					var josnData = {};
@@ -2251,7 +2255,8 @@ function down_passdevice(arg) {
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response){
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				if(arg == 1){
 					var downloadA = document.createElement('a');
 					var josnData = {};
@@ -3483,7 +3488,8 @@ function script_get(){
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				script_yaml_view();
 			}
 		}
@@ -3499,7 +3505,8 @@ function ipsetyaml_get(){
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				ipset_yaml_view();
 				ipsetarround_yaml_view();
 			}
@@ -3516,7 +3523,8 @@ function kpipsetyaml_get(){
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				kp_ipset_yaml_view();
 				kp_ipsetarround_yaml_view();
 			}
@@ -4390,7 +4398,8 @@ function outputlog(){
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				var downloadA = document.createElement('a');
 				var josnData = {};
 				var a = "http://"+window.location.hostname+"/_temp/"+"clash_run.log"
@@ -4750,7 +4759,8 @@ function host_select(){
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				host_select_get();
 			}
 		}
@@ -4798,7 +4808,8 @@ function yaml_select(){
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				yaml_select_get();
 				yamlcus_select_get();
 				yamlcuslist_select_get();
@@ -4904,7 +4915,8 @@ function clashbinary_select(){
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				clashbinary_select_get();
 
 			}
@@ -4950,7 +4962,8 @@ function proxygroup_select(){
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if(response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				setTimeout("proxygroup_select_get();", 300);
 				setTimeout("proxytype_select_get();", 300);
 			}
@@ -5074,7 +5087,8 @@ function addKPYTr() {
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if (response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				refresh_kpyacl_table();
 				E("merlinclash_koolproxy_acl_name").value = "";
 				E("merlinclash_koolproxy_acl_ip").value = "";
@@ -5295,7 +5309,8 @@ function add_kpyrule_Tr() {
 		data: JSON.stringify(postData),
 		dataType: "json",
 		success: function(response) {
-			if (response.result == id){
+			//返回太快变成string"1111"
+			if(response.result == id || parseInt(response.result) == id){
 				refresh_kpyrule_table();
 				E("merlinclash_koolproxy_rule_enable").checked = false;
 				E("merlinclash_koolproxy_rule_file").value = "";
