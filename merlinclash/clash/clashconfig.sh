@@ -2196,9 +2196,9 @@ load_tproxy() {
 		if ! checkmoduleisloaded; then
 			#insmod /lib/modules/${OS}/kernel/net/netfilter/${MODULE}.ko
 			#只有官改需要加载nf_tproxy_core,swrt不需要
-			if [  "${LINUX_VER}" -eq "419" ];then
+			if [  "${LINUX_VER}" -eq "419" -o "${LINUX_VER}" -eq "54" ];then
 				modprobe ${MODULE}.ko
-			elif [ -f "/lib/modules/${OS}/kernel/net/netfilter/${MODULE}.ko" ];then
+			else
 				insmod /lib/modules/${OS}/kernel/net/netfilter/${MODULE}.ko
 			fi
 		fi

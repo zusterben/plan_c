@@ -19,18 +19,17 @@
 <link rel="stylesheet" type="text/css" href="/res/softcenter.css">
 <link rel="stylesheet" type="text/css" href="/res/merlinclash.css">
 <script language="JavaScript" type="text/javascript" src="/js/jquery.js"></script>
+<script language="JavaScript" type="text/javascript" src="/res/layer/layer.js"></script>
 <script language="JavaScript" type="text/javascript" src="/js/httpApi.js"></script>
-<script type="text/javascript" src="/state.js"></script>
-<script type="text/javascript" src="/popup.js"></script>
-<script type="text/javascript" src="/help.js"></script>
-<script type="text/javascript" src="/general.js"></script>
-<script type="text/javascript" language="JavaScript" src="/js/table/table.js"></script>
-<script type="text/javascript" language="JavaScript" src="/client_function.js"></script>
-<script type="text/javascript" src="/res/mc-menu.js"></script>
-<script type="text/javascript" src="/res/softcenter.js"></script>
-<script type="text/javascript" src="/help.js"></script>
-<script type="text/javascript" src="/switcherplugin/jquery.iphone-switch.js"></script>
-<script type="text/javascript" src="/validator.js"></script>
+<script language="JavaScript" type="text/javascript" src="/state.js"></script>
+<script language="JavaScript" type="text/javascript" src="/general.js"></script>
+<script language="JavaScript" type="text/javascript" src="/popup.js"></script>
+<script language="JavaScript" type="text/javascript" src="/help.js"></script>
+<script language="JavaScript" type="text/javascript" src="/validator.js"></script>
+<script language="JavaScript" type="text/javascript" src="/client_function.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/table/table.js"></script>
+<script language="JavaScript" type="text/javascript" src="/res/softcenter.js"></script>
+<script language="JavaScript" type="text/javascript" src="/res/mc-menu.js"></script>
 <script>
 var db_merlinclash={};
 var db_merlinclash_tmp={};
@@ -653,7 +652,6 @@ function hot_off_mc(){
 	push_data("clash_rebuild.sh", "hot_off_mc",  db_merlinclash);
 }
 function cool_off_mc(){
-	require(['/res/layer/layer.js'], function(layer) {
 		layer.confirm('<li>路由器即将重启，你确定要冷关闭吗？</li>', {
 			shade: 0.8,
 		}, function(index) {
@@ -667,7 +665,6 @@ function cool_off_mc(){
 			layer.close(index);
 			return false;
 		});
-	});
 }
 function apply() {
 	if(!$.trim($('#merlinclash_d2s_dnsnp').val())){
@@ -2129,7 +2126,6 @@ function upload_clashdata() {
 		alert("请先选择文件");
 		return false;
 	}
-	require(['/res/layer/layer.js'], function(layer) {
 		layer.confirm('<li>请确保补丁文件合法！仍要上传安装补丁吗？</li>', {
 			shade: 0.8,
 		}, function(index) {
@@ -2168,7 +2164,6 @@ function upload_clashdata() {
 			layer.close(index);
 			return false;
 		});
-	});
 }
 function restore_clash_data() {
 	showMCLoadingBar();
@@ -3625,7 +3620,6 @@ function upload_clashbinary() {
 		return false;
 	}
 
-	require(['/res/layer/layer.js'], function(layer) {
 		layer.confirm('<li>请确保二进制文件合法！仍要上传二进制吗？</li>', {
 			shade: 0.8,
 		}, function(index) {
@@ -3652,9 +3646,6 @@ function upload_clashbinary() {
 			layer.close(index);
 			return false;
 		});
-	});
-
-
 }
 function upload_binary(uploadname) {
 	var dbus_post = {};
@@ -3672,7 +3663,6 @@ function upload_clashpatch() {
 		return false;
 	}
 
-	require(['/res/layer/layer.js'], function(layer) {
 		layer.confirm('<li>请确保补丁文件合法！仍要上传安装补丁吗？</li>', {
 			shade: 0.8,
 		}, function(index) {
@@ -3707,9 +3697,6 @@ function upload_clashpatch() {
 			layer.close(index);
 			return false;
 		});
-	});
-
-
 }
 function upload_patch(patchname) {
 	var dbus_post = {};
@@ -3727,7 +3714,6 @@ if(!$.trim($('#koolproxyrule').val())){
 	return false;
 }
 
-require(['/res/layer/layer.js'], function(layer) {
 	layer.confirm('<li>请确保规则包文件合法！仍要上传规则包吗？</li>', {
 		shade: 0.8,
 	}, function(index) {
@@ -3762,9 +3748,6 @@ require(['/res/layer/layer.js'], function(layer) {
 		layer.close(index);
 		return false;
 	});
-});
-
-
 }
 function upload_rule(rulename) {
 var dbus_post = {};
@@ -4638,7 +4621,6 @@ function geoip_update(action){
     var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
             + " " + date.getHours() + seperator2 + date.getMinutes()
             + seperator2 + date.getSeconds();
-	require(['/res/layer/layer.js'], function(layer) {
 		layer.confirm('<li>你确定要更新GeoIP数据库吗？</li>', {
 			shade: 0.8,
 		}, function(index) {
@@ -4655,7 +4637,6 @@ function geoip_update(action){
 			layer.close(index);
 			return false;
 		});
-	});
 }
 function chnroute_update(action){
 	var dbus_post = {};
@@ -4673,7 +4654,6 @@ function chnroute_update(action){
     var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
             + " " + date.getHours() + seperator2 + date.getMinutes()
             + seperator2 + date.getSeconds();
-	require(['/res/layer/layer.js'], function(layer) {
 		layer.confirm('<li>你确定要更新大陆白名单规则吗？</li>', {
 			shade: 0.8,
 		}, function(index) {
@@ -4689,11 +4669,9 @@ function chnroute_update(action){
 			layer.close(index);
 			return false;
 		});
-	});
 }
 function sc_update(action) {
 	var dbus_post = {};
-	require(['/res/layer/layer.js'], function(layer) {
 		layer.confirm('<li>你确定要更新subconverter规则文件吗？</li>', {
 			shade: 0.8,
 		}, function(index) {
@@ -4707,7 +4685,6 @@ function sc_update(action) {
 			layer.close(index);
 			return false;
 		});
-	});
 }
 function doalert(id){
   if(this.checked) {
@@ -6438,7 +6415,6 @@ function getkcpConfigs() {
 //----------------------------KCP代码部分END--------------------------------------//
 //-----------------------删除所有自定规则 开始----------------------//
 function delallaclconfigs() {
-	require(['/res/layer/layer.js'], function(layer) {
 	layer.confirm('<li>确定删除所有自定义规则吗？</li>', {
 		shade: 0.8,
 	}, function(index) {
@@ -6475,7 +6451,6 @@ function delallaclconfigs() {
 		layer.close(index);
 		return false;
 		});
-	});
 }
 function getaclconfigsmax(){
 	intoQueue({
@@ -9471,3 +9446,4 @@ function getaclconfigsmax(){
 </div>
 </body>
 </html>
+
