@@ -17,12 +17,8 @@ var elem = {
 		for (var i = 0; i < arguments.length - 1; ++i) {
 			E(arguments[i]).style.display = enable ? '' : 'none';
 		}
-	},
-}
-
-function get_config(name, def) {
-	return ((typeof(nvram) != 'undefined') && (typeof(nvram[name]) != 'undefined')) ? nvram[name] : def;
-}
+	}
+};
 
 (function($) {
 	$.fn.forms = function(data, settings) {
@@ -150,22 +146,7 @@ function createFormFields(data, settings) {
 	});
 	return form;
 }
-function compare(val1,val2){
-	return val1-val2;
-}
-function compfilter(a, b){
-	var c = {};
-	for (var key in b) {
-		if(a[key] && b[key] && a[key] == b[key]){
-			continue;
-		}else if(a[key] == undefined && (b[key] == "")){
-			continue;
-		}else{
-			c[key] = b[key];
-		}
-	}
-	return c;
-}
+
 function autoTextarea(elem, extra, maxHeight) {
 	extra = extra || 0;
 	var isFirefox = !!document.getBoxObjectFor || 'mozInnerScreenX' in window,
@@ -227,24 +208,10 @@ function autoTextarea(elem, extra, maxHeight) {
 	addEvent('focus', change);
 	change();
 }
-function getNowFormatDate(s) {
-	var date = new Date();
-	var seperator1 = "-";
-	var seperator2 = ":";
-	var month = date.getMonth() + 1;
-	var strDate = date.getDate();
-	if (month >= 1 && month <= 9) {
-		month = "0" + month;
-	}
-	if (strDate >= 0 && strDate <= 9) {
-		strDate = "0" + strDate;
-	}
-	var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate + " " + date.getHours() + seperator2 + date.getMinutes() + seperator2 + date.getSeconds() + seperator1 + date.getMilliseconds();
-	console.log(s, currentdate);
-}
+
 function menu_hook() {
-	tabtitle[tabtitle.length - 1] = new Array("", "MerlinClash");
-	tablink[tablink.length - 1] = new Array("", "Module_merlinclash.asp");
+	tabtitle[tabtitle.length - 1] = new Array("", "软件中心", "离线安装", "MerlinClash");
+	tablink[tablink.length - 1] = new Array("", "Main_Soft_center.asp", "Main_Soft_setting.asp", "Module_merlinclash.asp");
 }
 function versionCompare(v1, v2, options) {
 	var lexicographical = options && options.lexicographical,
@@ -357,73 +324,25 @@ function LoadingMCProgress(seconds) {
 	//alert(action);
 	document.getElementById("LoadingBar").style.visibility = "visible";
 	if (action == 0) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash功能关闭中 ..."
+		document.getElementById("loading_block3").innerHTML = "Magic Catling 关闭中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>关闭中</font></li>");
 	} else if (action == 1) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash启用中 ..."
+		document.getElementById("loading_block3").innerHTML = "Magic Catling 启用中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>此期间请勿访问屏蔽网址，以免污染DNS进入缓存</font></li><li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}  else if (action == 2) {
-		document.getElementById("loading_block3").innerHTML = "CLash订阅处理中 ..."
+		document.getElementById("loading_block3").innerHTML = "Magic Catling 订阅处理中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}	else if (action == 3) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash上传文件处理中 ..."
+		document.getElementById("loading_block3").innerHTML = "Magic Catling 上传文件处理中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}	else if (action == 4) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash配置文件删除中 ..."
+		document.getElementById("loading_block3").innerHTML = "Magic Catling 配置文件删除中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}	else if (action == 5) {
-		document.getElementById("loading_block3").innerHTML = "GeoIP在线更新中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 6) {
-		document.getElementById("loading_block3").innerHTML = "飞机节点正在一键转换中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 7) {
-		document.getElementById("loading_block3").innerHTML = "clash二进制在线更新中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 8) {
-		document.getElementById("loading_block3").innerHTML = "网易云音乐解锁快速重启中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 9) {
-		document.getElementById("loading_block3").innerHTML = "网易云音乐解锁证书生成中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 10) {
-		document.getElementById("loading_block3").innerHTML = "获取远程clash版本号中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 11) {
-		document.getElementById("loading_block3").innerHTML = "替换clash版本中 ..."
+		document.getElementById("loading_block3").innerHTML = "GeoIP 在线更新中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}	else if (action == 12) {
-		document.getElementById("loading_block3").innerHTML = "本地上传clash二进制替换处理中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 13) {
-		document.getElementById("loading_block3").innerHTML = "本地上传UnblockNeteaseMusic中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 14) {
-		document.getElementById("loading_block3").innerHTML = "在线更新内置常规规则文件中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 15) {
-		document.getElementById("loading_block3").innerHTML = "上传安装补丁中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 16) {
-		document.getElementById("loading_block3").innerHTML = "Clash-subconverter本地转换订阅中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 17) {
-		document.getElementById("loading_block3").innerHTML = "Clash-小白助手订阅中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 18) {
-		document.getElementById("loading_block3").innerHTML = "Clash-更新subconverter规则中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 19) {
-		document.getElementById("loading_block3").innerHTML = "在线更新内置游戏规则文件中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 20) {
-		document.getElementById("loading_block3").innerHTML = "检查是否有新版本 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 21) {
-		document.getElementById("loading_block3").innerHTML = "Dler-subconverter本地转换订阅中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 22) {
-		document.getElementById("loading_block3").innerHTML = "上传hosts文件中 ..."
+		document.getElementById("loading_block3").innerHTML = "本地上传内核二进制中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}	else if (action == 23) {
 		document.getElementById("loading_block3").innerHTML = "还原自定义规则中 ..."
@@ -434,59 +353,17 @@ function LoadingMCProgress(seconds) {
 	}	else if (action == 25) {
 		document.getElementById("loading_block3").innerHTML = "大陆白名单规则在线更新中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 26) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash手动更新配置中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}	else if (action == 27) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash数据还原中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 28) {
-		document.getElementById("loading_block3").innerHTML = "上传ini配置文件中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 29) {
-		document.getElementById("loading_block3").innerHTML = "上传list文件中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 30) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash ini配置文件删除中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 31) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash list文件删除中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 32) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash HOST文件删除中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 33) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash KP规则上传中 ..."
+		document.getElementById("loading_block3").innerHTML = "Magic Catling 数据还原中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}	else if (action == 34) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash 下拉列表值重建中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 35) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash iptables重建中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 36) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash IPtables转发白名单提交中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 37) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash IPtables转发黑名单提交中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 38) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash KoolProxy自定义过滤名单提交中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 39) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash KoolProxy自定义绕行名单提交中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 40) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash Sniffer域名嗅探设置提交中 ..."
-		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
-	}	else if (action == 41) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash Dnsmasq重建中 ..."
+		document.getElementById("loading_block3").innerHTML = "Magic Catling 下拉列表值重建中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}	else if (action == 42) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash 热关闭中 ..."
+		document.getElementById("loading_block3").innerHTML = "Magic Catling 热关闭中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}	else if (action == 43) {
-		document.getElementById("loading_block3").innerHTML = "MerlinClash 冷关闭中 ..."
+		document.getElementById("loading_block3").innerHTML = "Magic Catling 冷关闭中 ..."
 		$("#loading_block2").html("<li><font color='#ffcc00'>请等待日志显示完毕，并出现自动关闭按钮！</font></li><li><font color='#ffcc00'>在此期间请不要刷新本页面，不然可能导致问题！</font></li>");
 	}	
 
@@ -502,10 +379,12 @@ function openmcHint(itemNum) {
 	width = "350px";
 
 	if (itemNum == 1) {
-		statusmenu = "预置方案，可通过【附加功能】的【内置DNS方案】栏修改；</br>"
-		statusmenu += "文件存放位置：/jffs/softcenter/MerlinClash/yaml_dns;redir-host为redirhost.yaml;fake-ip为fakeip.yaml";
+		statusmenu = "1.默认为Redir-Host，兼容性良好，错误设置DNS可能被污染；</br>"
+		statusmenu += "2.Fake-ip，拒绝DNS污染。无法获得真实IP，部分游戏/P2P请求可能无法连接；</br>"
+		statusmenu += "3.DNS工作原理请查阅Mihomo Wiki【<a href=\"https://wiki.metacubex.one/config/dns/diagram/#_3\" target=\"_blank\"><font color='#CC0066'>解析流程</font></a>】。</p>"
+		statusmenu += "</br>"
 		_caption = "DNS方案说明";
-		width = "380px";
+		width = "400px";
 	}
 	if (itemNum == 2) {
 		width = "450px";
@@ -546,17 +425,10 @@ function openmcHint(itemNum) {
 		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;举例：SRC-PORT,7777,REJECT </br>"
 		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;简单说明：设定来源于局域网某端口的请求如何走规则</br>"
 		//MATCH
-		statusmenu += "<span><b><font color='#CC0066'>【8】MATCH:</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;所有规则</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;举例：MATCH,全局模式 </br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;简单说明：常用于规则尾部，规定其上面没有的规则如何走</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;（这里不推荐使用，会使下方规则全部失效）</br>"
-		//MATCH
-		statusmenu += "<span><b><font color='#CC0066'>【9】SCRIPT:</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;脚本快捷方式</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;举例：SCRIPT,自动断网,REJECT </br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;简单说明：Premium 2021.09.07以上内核支持</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;需要先声明Script，请于附加功能打开Script编辑区</br>"
+		statusmenu += "<span><b><font color='#CC0066'>&nbsp;&nbsp;&nbsp;&nbsp;----------------------</font></b></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;这里只举例常用规则类型</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;其他类型请参阅 Mihomo Wiki【<a href=\"https://wiki.metacubex.one/config/rules/\" target=\"_blank\"><font color='#CC0066'>路由规则</font></a>】。</br>"
+		statusmenu += "</br>"
 		_caption = "内容说明";
 		return overlib(statusmenu, OFFSETX, -615, OFFSETY, -290, LEFT, STICKY, WIDTH, 'width', CAPTION, _caption, CLOSETITLE, '');
 	}
@@ -573,6 +445,7 @@ function openmcHint(itemNum) {
 		//网址
 		statusmenu += "<span><b><font color='#CC0066'>【3】网址/域名/关键字</font></b></br>"
 		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;注意：请使用小写字母填写</br>"
+		statusmenu += "</br>"
 		_caption = "内容说明";
 		
 	}
@@ -582,93 +455,44 @@ function openmcHint(itemNum) {
 		statusmenu += "<span><b><font color='#CC0066'>连接方式根据内容</font></b></br>"
 		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;可为DIRECT(直连),REJECT(阻断),Proxy名（节点名）,Proxy Group名（规则组名）</br>"
 		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;如果您的节点名/规则组名有emoji/空格/符号，请完整复制emoji/空格/符号和您的规则组</br>"
+		statusmenu += "</br>"
 		_caption = "连接方式说明";
 		
 	}
-	if (itemNum == 5) {
-		width = "700px";
-		bgcolor = "#CC0066",
-		statusmenu += "<img src='/res/clash-kcp.jpg'></img>"
-		_caption = "KCP帮助";
-		
-	}
 	if (itemNum == 6) {
-		width = "500px";
+		width = "380px";
 		bgcolor = "#CC0066",
-		statusmenu += "<span><b><font color='#CC0066'>小白一键订阅助手</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持机场的SS|SSR|V2ray|Trojan的http/https订阅链接</br>"
-	    statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持多订阅合并，每个订阅请用回车或者|分开</br>"
-        statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<font color=#279fd9>如果转换失败，请使用前往ACL4SSR主页在线转换</font></br>"
-		//acl4ssr
-		statusmenu += "<span><b><font color='#CC0066'>SubConverter本地转换</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持常规机场的SS|SSR|V2ray|Trojan的http/https订阅链接</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持【SS://】【SSR://】【Vemss://】【Trajon://】方式订阅</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持多链接订阅，回车或者|分开</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<font color=#279fd9>如果转换失败，请使用前往ACL4SSR主页在线转换</font></br>"
+		statusmenu += "<span><b><font color='#CC0066'>MC_系列规则</font></b></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持机场的http/https链接订阅</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持【SS://】【SSR://】【Vmess://】等节点订阅</br>"
+	    statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持多订阅合并，每个订阅请用|分开，如：</br>"
+        statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<font color='#279fd9'>http://aaa.com|https://bbb.com|vmess://cccddd</font></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持自定义机场名称，订阅后跟();支持每个订阅自定义UA，后跟<>,如：</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<font color='#279fd9'>http://aaa.com(机场名1)&lt;clash&gt;|https://bbb.com(链接名2)&lt;v2ray&gt;</font></br>"
+		//原始规则
+		statusmenu += "</br>"
+		statusmenu += "<span><b><font color='#CC0066'>订阅原始规则</font></b></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持机场的http/https等Clash专用链接订阅</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;不支持【SS://】【SSR://】【Vmess://】等节点订阅</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<b>定时更新策略：</b></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;每天：每日凌晨5点更新</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;三天：每周一和周四凌晨5点更新</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;每周：每周一凌晨5点更新</br>"		
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<font color='#279fd9'>暂不支持订阅合并</font></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<font color='#279fd9'>暂不支持节点覆写</font></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<font color='#279fd9'>暂不支持节点筛选</font></br>"
+		statusmenu += "</br>"
 		_caption = "订阅帮助";
 		
 	}
-	if (itemNum == 7) {
-		width = "350px";
-		bgcolor = "#CC0066",
-		statusmenu += "<span><b><font color='#CC0066'>快速重启</font></b></br>"
-		statusmenu += "快速恢复最后一次正常启动的配置状态。</br>"
-		statusmenu += "省去文件检查，合并等操作，节省启动时间。</br>"
-		statusmenu += "<span><font color='#CC0066'>--上一次正常启动后修改的设置，快速重启不会生效--</font></br>"
-		statusmenu += "</br>"
-		statusmenu += "如需应用任何新的设置，请通过“保存&启动”正常启动！</br>"
-		_caption = "快速重启说明";		
-	}
-	if (itemNum == 8) {
-		width = "400px";
-		bgcolor = "#CC0066",
-		statusmenu += "如果能正常解锁，请忽略本内容。</br>"
-		statusmenu += "<span><b><font color='#CC0066'>证书安装</font></b></br>"
-		statusmenu += "1.设置 WIFI/有线代理方式为【自动】；</br>"
-		statusmenu += "2.点击“生成证书”后，“下载证书”后安装到您需要解锁的设备中；</br>"
-		statusmenu += "3.iOS13及以上设备，安装证书后，在“设置-通用-关于本机-证书信任设置” 中，信任 UnblockNeteaseMusic Root CA</br>"
-		statusmenu += "<span><b><font color='#CC0066'>证书生成</font></b></br>"
-		statusmenu += "经查，384.18与证书生成存在冲突！</br>"
-		statusmenu += "</br>"
-		
-		_caption = "证书相关说明";		
-	}
-	if (itemNum == 9) {
-		width = "350px";
-		bgcolor = "#CC0066",
-		statusmenu += "<span><b><font color='#CC0066'>本功能为实验功能，如无需求，不建议开启</font></b></br>"
-		statusmenu += "1.Snell节点不支持UDP转发，开启后可能会断网；</br>"
-		statusmenu += "2.使用ClashR内核时SSR节点不支持UDP转发；</br>"
-		statusmenu += "3.UDP转发可能需要您的配置文件写入开启参数；</br>"
-		statusmenu += "4.UDP转发需要您的节点支持，否则可能无法正常上网；</br>"
-		statusmenu += "5.部分游戏可能需要Fake-ip模式才能正常转发。</br>"
-		statusmenu += "</br>"
-		statusmenu += "<span><b><font color='#CC0066'>如果开启后断网，请做如下操作：</font></b></br>"
-		statusmenu += "1.尝试使用ip地址，登陆路由web管理端，关闭Clash。</br>"
-	    statusmenu += "2.如果使用ip地址依然无法登陆，请重启路由器；</br>"
-		statusmenu += "3.在路由开机过程中尝试登陆路由，并快速关闭Clash。</br>"
-		
-
-		_caption = "UDP试用必看";	
-	}
-	if (itemNum == 10) {
-		width = "700px";
-		bgcolor = "#CC0066",
-		statusmenu += "<img src='/res/clash_uploadnotice.jpg'></img>"
-		_caption = "配置上传必看";	
-	}
-	if (itemNum == 11) {
-		width = "700px";
-		bgcolor = "#CC0066",
-		statusmenu += "<img src='/res/clash-host.jpg'></img>"
-		_caption = "clash自定义host帮助";
-		
-	}
 	if (itemNum == 12) {
-		width = "600px";
+		width = "480px";
 		bgcolor = "#CC0066",
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;祥看https://mcreadme.gitbook.io/mc/Advanced/remote。</br>"
-		_caption = "面板帮助";
+		statusmenu += "<span><b><font color='#CC0066'>DNS劫持说明</font></b></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;开启：劫持局域网内所有DNS请求，防止因设备自定义DNS造成DNS污染</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;关闭：设备DNS必须为路由IP，否则可能无法正常翻墙</br>"
+		statusmenu += "</br>"
+		_caption = "DNS劫持";
 		
 	}
 	if (itemNum == 13) {
@@ -685,89 +509,39 @@ function openmcHint(itemNum) {
 		_caption = "检查日志重试次数说明";
 		
 	}
-	if (itemNum == 14) {
-		width = "250px";
-		bgcolor = "#CC0066",
-		statusmenu += "<span><b><font color='#CC0066'>Clash-Yaml配置下载</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持机场Clash订阅链接</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;支持ACL4SSR转换后的订阅链接</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;需要机场规则，可通过此处下载配置</br>"
-		_caption = "Yaml配置下载帮助";
-		
-	}
-	if (itemNum == 15) {
+	if (itemNum == 11) {
 		width = "350px";
 		bgcolor = "#CC0066",
-		//模式1
-		statusmenu += "<span><b><font color='#CC0066'>【1】M模式</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;将绕行设备IP添加到iptables的MerlinClash链上。</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;无特殊情况，默认选择M模式即可</br>"
-		//模式2
-		statusmenu += "<span><b><font color='#CC0066'>【2】P模式</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;将绕行设备IP添加到iptables的PREROUTING链上。</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;优先级较高，koolproxy可能无法在绕行设备上生效。</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;如果无法通过M模式绕行成功，可使用P模式。</br>"
-		_caption = "绕行模式说明";
+		statusmenu += "<span>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color='#CC0066'>自定义测速时间</font></b></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<b>修改yaml配置中的的interval值</b></br>"
+        statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;既每隔多少毫秒自动测一次ping值</br>"
+	    statusmenu += "</br>"
+		_caption = "自定义测速时间说明";
 		
 	}
 	if (itemNum == 16) {
 		width = "350px";
 		bgcolor = "#CC0066",
-		statusmenu += "<span>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color='#CC0066'>自动测Ping值设置</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<b>自定义测速时间：</b>修改yaml配置中的的interval值</br>"
-        statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;既每隔多少毫秒自动测一次ping值</br>"
-        statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;------------------------------------</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<b>自定义容差值：</b>修改yaml配置中的tolerance值</br>"
+		statusmenu += "<span>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color='#CC0066'>自定义容差值</font></b></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;<b>修改yaml配置中的tolerance值</b></br>"
 		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;既两个节点ping值差大于设定才切换节点</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;部分自定义yaml配置文件可能不兼容</br>"
 	    statusmenu += "</br>"
-		_caption = "自动测Ping值设置说明";
+		_caption = "自定义容差值说明";
 		
 	}
 	if (itemNum == 17) {
 		width = "380px";
 		bgcolor = "#CC0066",
-		statusmenu += "<span>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color='#CC0066'>大陆IP不经过Clash</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;启用后中国大陆流量将不再经过Merlin Clash</br>"
+		statusmenu += "<span>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color='#CC0066'>大陆IP不经过内核</font></b></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;启用后匹配到大陆IP规则库的流量将不再经过Mihomo内核</br>"
 		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;对于Arm V7设备，有助于提升国内网络速度</br>"
 		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;---------------------------------------</br>"
 		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;Redir-Hosts：使用大陆IP名单绕行</br>"
 		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;Fake-IP：同时匹配fake ip filter和大陆IP名单才可绕行</br>"
         statusmenu += "</br>"
-		_caption = "大陆IP不经过Clash说明";
+		_caption = "大陆IP不经过内核说明";
 
 		
-	}
-	if (itemNum == 18) {
-		width = "700px";
-		bgcolor = "#CC0066",
-		statusmenu += "<img src='/res/clash-passmode.png'></img>"
-		_caption = "设备管理必看";	
-	}
-	if (itemNum == 19) {
-		width = "650px";
-		_caption = "规则控制";
-		statusmenu = "&nbsp;&nbsp;&nbsp;&nbsp;规则控制功能为大家提供了经过Kids Protect兼容认证的规则，其中包括：静态规则、每日规则、视频规则、自定规则，koolproxy用户可以根据自己的需求选取相应的规则。"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;</br></br><b>koolproxy兼容认证规则介绍：</b>"
-		//静态规则
-		statusmenu += "</br><font color='#CC0066'><b>1:静态规则（koolproxy.txt）：</b></font>"
-		statusmenu += "</br>&nbsp;&nbsp;&nbsp;&nbsp;该规则包含了较多国内网站和部分知名国外网站的页面元素、js库等屏蔽规则，使用该规则可以屏蔽对应网站的一些推广内容";
-		//每日规则
-		statusmenu += "</br><font color='#CC0066'><b>2:每日规则（daily.txt）：</b></font>"
-		statusmenu += "</br>&nbsp;&nbsp;&nbsp;&nbsp;每日规则不定时更新，是静态规则的补充，因为静态规则文件较大，因此更新较小的每日规则，以避免每次更新静态规则消耗过多服务器流量。"
-		//视频规则
-		statusmenu += "</br><font color='#CC0066'><b>3:视频规则（kp.dat）：</b></font>"
-		statusmenu += "</br>&nbsp;&nbsp;&nbsp;&nbsp;视频规则为加密规则，多为过滤一些flash内嵌元素和一些不良网站，为避免不良网站被人获取，所以采取加密处理。";
-		//自定规则
-		statusmenu += "</br><font color='#CC0066'><b>4:自定规则（user.txt）：</b></font>"
-		statusmenu += "</br>&nbsp;&nbsp;&nbsp;&nbsp;用户可以为网站编写自己的规则并用koolproxy引擎来进行过滤。";
-		//自定规则
-		statusmenu += "</br><font color='#CC0066'><b>5:第三方规则：</b></font>"
-		statusmenu += "</br>&nbsp;&nbsp;&nbsp;&nbsp;你也能在此处添加第三方规则，不过第三方规则不能保证其和koolproxy的兼容性，有时候甚至会其它规则出现相互冲突。</br>&nbsp;&nbsp;&nbsp;&nbsp;请确保第三方规则链接有对应的.md5链接，例如<u>https://somerule.com/myrule.txt</u>，应该有对应的<u>https://somerule.com/myrule.txt.md5</u> 链接，koolproxy才能正确下载规则。";
-		statusmenu += "</br>";
-		statusmenu += "</br>&nbsp;&nbsp;&nbsp;&nbsp;koolproxy的工作原理是基于规则来过滤页面元素，如果某些网站的一些元素无法屏蔽，可能是规则没有覆盖到这些网站，大家可以通过自己编写规则来实现屏蔽，或者反馈给规则维护人员，维护人员采纳后会通过规则推送，来实现这些网站元素的屏蔽。";
-		statusmenu += "</br>&nbsp;&nbsp;&nbsp;&nbsp;规则的更新由koolproxy主程序发起，用户只需要添加规则文件名，规则地址等信息即可获得相应规则。";	
 	}
 	if (itemNum == 20) {
 		width = "350px";
@@ -785,62 +559,26 @@ function openmcHint(itemNum) {
 		width = "350px";
 		bgcolor = "#CC0066",
 		statusmenu += "<span>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color='#CC0066'>GeoIP 数据库</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;--------------MaxMind版------------</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;Clash默认原版数据库</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;文件较大，大陆ip数据库有10%左右的错误。</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;--------------IPIP版------------</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;根据MaxMind版，修正大陆数据库</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;使用china_ip_list和纯真CN数据库替换原大陆IP。</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;--------------Hackl0us版------------</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;只有大陆IP数据，文件小巧</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;整合准确度较高的IPIP和纯真数据库。</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;---------Loyalsoldier增强版--------</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;使用IPIP.net数据修正MaxMind版大陆IP</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;增加NetFlix/Google/Twitter等特殊类别。</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;------------LoyalS-300k版----------</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;Loyalsoldier数据库的CN精简版</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;MC内置数据库，支持IPv6</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;详见<a href=\"https://github.com/MetaCubeX/meta-rules-dat\" target=\"_blank\"><font color='#279fd9'>项目GitHub</font></a></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;--------------Lite版------------</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;Mihomo官方数据库：geoip-lite.dat</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;国家仅包含CN/JP,包含常用类别，精简体积</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;--------------Full版------------</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;Mihomo官方数据库：geoip.dat</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;文件较大，未使用JFFS2USB，请勿更新</br>"
 		statusmenu += "</br>"
-		_caption = "GeoIP 数据库说明";
-		
-	}
-	if (itemNum == 22) {
-		width = "350px";
-		bgcolor = "#CC0066",
-		statusmenu += "<span><b><font color='#CC0066'>备份内容</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;---------------------------------------</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;备份内容包含【KP证书|规则】、【KP访问控制】、</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;【云村证书】、【黑白名单】、【配置文件】、</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;【host】、【dns】、【插件设置】等</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;</br>"
-		_caption = "备份内容说明";
-		
-	}
-	if (itemNum == 23) {
-		width = "500px";
-		bgcolor = "#CC0066",
-		statusmenu += "<span><b><font color='#CC0066'>【1】碎片文件(.list)说明</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;当有自定义碎片（.list）文件，文件存放路径为：</br>"
-	    statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;/jffs/softcenter/MerlinClash/subconverter/rules/custom</br>"
-		statusmenu += "<span><b><font color='#CC0066'>【2】自定义订阅配置(.ini)说明</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;自定义订阅(.ini)文件引用自定义碎片(.list)声明格式如下：</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;surge_ruleset=我的碎片,rules/custom/mylist.list</br>"
-		_caption = "文件说明";
-		
-	}
-	if (itemNum == 24) {
-		width = "350px";
-		bgcolor = "#CC0066",
-		statusmenu += "<span><b><font color='#CC0066'>IPv6使用须知</font></b></br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;1.确保路由IPv6已设置且有IPv6地址</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;2.关闭【护网大师】功能</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;3.开启Tproxy模式【仅开启TCP转发】或【同时开启TCP&UDP】</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;4.使用【REDIR-HOST】模式</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;*已知【FAKE-IP】模式下存在DNS解析问题</br>"
-		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;*请确保您的节点支持IPv6</br>"
-	    statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;*鉴于当前国内IPv6环境，无非必要，极度不建议使用！</br>"
+		statusmenu += "<span>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color='#CC0066'>GeoSite 数据库</font></b></br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;------------Default版----------</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;MC定制数据库</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;体积尽可能小的包含更多的常用网站</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;--------------Lite版------------</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;Mihomo官方数据库：geosite-lite.dat</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;仅包含常用集合，cn 为精简集合</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;--------------Full版------------</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;Mihomo官方数据库：geosite.dat</br>"
+		statusmenu += "&nbsp;&nbsp;&nbsp;&nbsp;文件较大，注意JFFF空间</br>"
 		statusmenu += "</br>"
-		_caption = "IPV6使用须知";
+		_caption = "Geo 数据库说明";
 		
 	}
 	if (itemNum == 25) {
@@ -851,30 +589,11 @@ function openmcHint(itemNum) {
 		statusmenu += "冷关闭：关闭MC开机启动，重启路由后即可完全关闭MC</br>"
 		_caption = "强制关闭Merlin Clash说明";		
 	}
-	if (itemNum == 26) {
-		width = "350px";
-		bgcolor = "#CC0066",
-		statusmenu += "如果clash进程正常，节点正常，YOUTUBE能访问，视频转圈，属于DNS解析问题</br>"
-		statusmenu += "可能一：DNS缓存，静待几分钟即可解决</br>"
-		statusmenu += "可能二：DNS解析异常，如DNS服务器被墙。使用【附加功能】-【DNS编辑】修改DNS服务器后保存重启Clash</br>"
-		statusmenu += "</br>"
-		_caption = "无法访问说明";		
-	}
 	if (itemNum == 27) {
 		width = "350px";
 		bgcolor = "#CC0066",
 		statusmenu += "<span><b><font color='#CC0066'>重建下拉列表</font></b></br>"
 		statusmenu += "若【配置文件选择】等下拉列表异常，可使用此功能恢复</br>"
-		statusmenu += "----------------------------------------------</br>"
-		statusmenu += "<span><b><font color='#CC0066'>重建IPtables（透明代理）</font></b></br>"
-		statusmenu += "解决由于IPtables被其他程序重启，导致透明代理失效的问题；</br>"
-		statusmenu += "若MC开启一段时间后，检查Clash进程/节点/DNS设置都正常，但无法正常代理时，可使用此功能</br>"
-		statusmenu += "-------------------------------------------------------</br>"
-		statusmenu += "<span><b><font color='#CC0066'>重建DNSMASQ</font></b></br>"
-		statusmenu += "解决Clash异常退出断网的问题；</br>"
-		statusmenu += "若Clash异常退出断网，可使用此功能</br>"
-		statusmenu += "-------------------------------------------------------</br>"
-        statusmenu += "若应用任何新的设置，请通过“保存&启动”正常启动！</br>"
 		_caption = "重建服务说明";		
 	}
 	if (itemNum == 28) {
@@ -886,24 +605,21 @@ function openmcHint(itemNum) {
 		statusmenu += "只支持UDP DNS，默认为阿里223.5.5.5</br>"
 		_caption = "黑名单设备解析服务器";		
 	}
-	if (itemNum == 29) {
-		width = "350px";
-		bgcolor = "#CC0066",
-		statusmenu += "<span><b><font color='#CC0066'>Sniffer域名嗅探</font></b></br>"
-		statusmenu += "只支持2022.04.09以后编译的Meta核心</br>"
-		statusmenu += "强烈建议Netfilx TV版用户开启，解决分流异常问题</br>"
-		statusmenu += "----------------------------------------------</br>"
-		statusmenu += "更多详细参数请看 https://docs.metacubex.one/function/dns/sniffer</br>"
-		_caption = "Sniffer域名嗅探";		
-	}
 	if (itemNum == 30) {
 		width = "350px";
 		bgcolor = "#CC0066",
 		statusmenu += "<span><b><font color='#CC0066'>TCP连接并发</font></b></br>"
-		statusmenu += "只支持2022.04.09以后编译的Meta核心</br>"
 		statusmenu += "TCP连接并发，如果域名解析结果对应多个IP，并发所有IP，选择握手最快的IP进行连接</br>"
 		_caption = "TCP连接并发";		
 	}	
+	if (itemNum == 31) {
+		width = "350px";
+		bgcolor = "#CC0066",
+		statusmenu += "<span><b><font color='#CC0066'>队列请求</font></b></br>"
+		statusmenu += "MC插件所有请求队列化发送，缓解路由HTTPD服务易炸的情况</br>"
+		statusmenu += "2025年11月后的路由固件版本无需开启</br>"
+		_caption = "队列请求说明";		
+	}
 	return overlib(statusmenu, OFFSETX, -500, LEFT, STICKY, WIDTH, 'width', CAPTION, _caption, CLOSETITLE, '');
 }
 
@@ -1051,565 +767,7 @@ function showDropdownClientList(_callBackFun, _callBackFunParam, _interfaceMode,
 	}
 }
 
-//=====================================
-function do_js_beautify(source) {
-	js_source = source.replace(/^\s+/, '');
-	tab_size = 2;
-	tabchar = ' ';
-	//tab_size = 1;
-	//tabchar = '\t';
-	return js_beautify(js_source, tab_size, tabchar);
-}
 
-function pack_js(source) {
-	//var input = document.getElementById('ss_basic_v2ray_json').value;
-	var input = source;
-	var packer = new Packer;
-	var output = packer.pack(input, 0, 0);
-	return output
-}
-
-
-function js_beautify(js_source_text, indent_size, indent_character, indent_level) {
-
-	var input, output, token_text, last_type, last_text, last_word, current_mode, modes, indent_string;
-	var whitespace, wordchar, punct, parser_pos, line_starters, in_case;
-	var prefix, token_type, do_block_just_closed, var_line, var_line_tainted;
-
-	function trim_output() {
-		while (output.length && (output[output.length - 1] === ' ' || output[output.length - 1] === indent_string)) {
-			output.pop();
-		}
-	}
-
-	function print_newline(ignore_repeated) {
-		ignore_repeated = typeof ignore_repeated === 'undefined' ? true : ignore_repeated;
-
-		trim_output();
-
-		if (!output.length) {
-			return; // no newline on start of file
-		}
-
-		if (output[output.length - 1] !== "\n" || !ignore_repeated) {
-			output.push("\n");
-		}
-		for (var i = 0; i < indent_level; i++) {
-			output.push(indent_string);
-		}
-	}
-
-	function print_space() {
-		var last_output = output.length ? output[output.length - 1] : ' ';
-		if (last_output !== ' ' && last_output !== '\n' && last_output !== indent_string) { // prevent occassional duplicate space
-			output.push(' ');
-		}
-	}
-
-	function print_token() {
-		output.push(token_text);
-	}
-
-	function indent() {
-		indent_level++;
-	}
-
-	function unindent() {
-		if (indent_level) {
-			indent_level--;
-		}
-	}
-
-	function remove_indent() {
-		if (output.length && output[output.length - 1] === indent_string) {
-			output.pop();
-		}
-	}
-
-	function set_mode(mode) {
-		modes.push(current_mode);
-		current_mode = mode;
-	}
-
-	function restore_mode() {
-		do_block_just_closed = current_mode === 'DO_BLOCK';
-		current_mode = modes.pop();
-	}
-
-	function in_array(what, arr) {
-		for (var i = 0; i < arr.length; i++) {
-			if (arr[i] === what) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	function get_next_token() {
-		var n_newlines = 0;
-		var c = '';
-
-		do {
-			if (parser_pos >= input.length) {
-				return ['', 'TK_EOF'];
-			}
-			c = input.charAt(parser_pos);
-
-			parser_pos += 1;
-			if (c === "\n") {
-				n_newlines += 1;
-			}
-		}
-		while (in_array(c, whitespace));
-
-		if (n_newlines > 1) {
-			for (var i = 0; i < 2; i++) {
-				print_newline(i === 0);
-			}
-		}
-		var wanted_newline = (n_newlines === 1);
-
-
-		if (in_array(c, wordchar)) {
-			if (parser_pos < input.length) {
-				while (in_array(input.charAt(parser_pos), wordchar)) {
-					c += input.charAt(parser_pos);
-					parser_pos += 1;
-					if (parser_pos === input.length) {
-						break;
-					}
-				}
-			}
-
-			// small and surprisingly unugly hack for 1E-10 representation
-			if (parser_pos !== input.length && c.match(/^[0-9]+[Ee]$/) && input.charAt(parser_pos) === '-') {
-				parser_pos += 1;
-
-				var t = get_next_token(parser_pos);
-				c += '-' + t[0];
-				return [c, 'TK_WORD'];
-			}
-
-			if (c === 'in') { // hack for 'in' operator
-				return [c, 'TK_OPERATOR'];
-			}
-			return [c, 'TK_WORD'];
-		}
-
-		if (c === '(' || c === '[') {
-			return [c, 'TK_START_EXPR'];
-		}
-
-		if (c === ')' || c === ']') {
-			return [c, 'TK_END_EXPR'];
-		}
-
-		if (c === '{') {
-			return [c, 'TK_START_BLOCK'];
-		}
-
-		if (c === '}') {
-			return [c, 'TK_END_BLOCK'];
-		}
-
-		if (c === ';') {
-			return [c, 'TK_END_COMMAND'];
-		}
-
-		if (c === '/') {
-			var comment = '';
-			// peek for comment /* ... */
-			if (input.charAt(parser_pos) === '*') {
-				parser_pos += 1;
-				if (parser_pos < input.length) {
-					while (!(input.charAt(parser_pos) === '*' && input.charAt(parser_pos + 1) && input.charAt(parser_pos + 1) === '/') && parser_pos < input.length) {
-						comment += input.charAt(parser_pos);
-						parser_pos += 1;
-						if (parser_pos >= input.length) {
-							break;
-						}
-					}
-				}
-				parser_pos += 2;
-				return ['/*' + comment + '*/', 'TK_BLOCK_COMMENT'];
-			}
-			// peek for comment // ...
-			if (input.charAt(parser_pos) === '/') {
-				comment = c;
-				while (input.charAt(parser_pos) !== "\x0d" && input.charAt(parser_pos) !== "\x0a") {
-					comment += input.charAt(parser_pos);
-					parser_pos += 1;
-					if (parser_pos >= input.length) {
-						break;
-					}
-				}
-				parser_pos += 1;
-				if (wanted_newline) {
-					print_newline();
-				}
-				return [comment, 'TK_COMMENT'];
-			}
-
-		}
-
-		if (c === "'" || // string
-			c === '"' || // string
-			(c === '/' &&
-				((last_type === 'TK_WORD' && last_text === 'return') || (last_type === 'TK_START_EXPR' || last_type === 'TK_END_BLOCK' || last_type === 'TK_OPERATOR' || last_type === 'TK_EOF' || last_type === 'TK_END_COMMAND')))) { // regexp
-			var sep = c;
-			var esc = false;
-			c = '';
-
-			if (parser_pos < input.length) {
-
-				while (esc || input.charAt(parser_pos) !== sep) {
-					c += input.charAt(parser_pos);
-					if (!esc) {
-						esc = input.charAt(parser_pos) === '\\';
-					} else {
-						esc = false;
-					}
-					parser_pos += 1;
-					if (parser_pos >= input.length) {
-						break;
-					}
-				}
-
-			}
-
-			parser_pos += 1;
-			if (last_type === 'TK_END_COMMAND') {
-				print_newline();
-			}
-			return [sep + c + sep, 'TK_STRING'];
-		}
-
-		if (in_array(c, punct)) {
-			while (parser_pos < input.length && in_array(c + input.charAt(parser_pos), punct)) {
-				c += input.charAt(parser_pos);
-				parser_pos += 1;
-				if (parser_pos >= input.length) {
-					break;
-				}
-			}
-			return [c, 'TK_OPERATOR'];
-		}
-
-		return [c, 'TK_UNKNOWN'];
-	}
-
-	//----------------------------------
-
-	indent_character = indent_character || ' ';
-	indent_size = indent_size || 4;
-
-	indent_string = '';
-	while (indent_size--) {
-		indent_string += indent_character;
-	}
-
-	input = js_source_text;
-
-	last_word = ''; // last 'TK_WORD' passed
-	last_type = 'TK_START_EXPR'; // last token type
-	last_text = ''; // last token text
-	output = [];
-
-	do_block_just_closed = false;
-	var_line = false;
-	var_line_tainted = false;
-
-	whitespace = "\n\r\t ".split('');
-	wordchar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_$'.split('');
-	punct = '+ - * / % & ++ -- = += -= *= /= %= == === != !== > < >= <= >> << >>> >>>= >>= <<= && &= | || ! !! , : ? ^ ^= |='.split(' ');
-
-	// words which should always start on new line.
-	line_starters = 'continue,try,throw,return,var,if,switch,case,default,for,while,break,function'.split(',');
-
-	// states showing if we are currently in expression (i.e. "if" case) - 'EXPRESSION', or in usual block (like, procedure), 'BLOCK'.
-	// some formatting depends on that.
-	current_mode = 'BLOCK';
-	modes = [current_mode];
-
-	indent_level = indent_level || 0;
-	parser_pos = 0; // parser position
-	in_case = false; // flag for parser that case/default has been processed, and next colon needs special attention
-	while (true) {
-		var t = get_next_token(parser_pos);
-		token_text = t[0];
-		token_type = t[1];
-		if (token_type === 'TK_EOF') {
-			break;
-		}
-
-		switch (token_type) {
-
-			case 'TK_START_EXPR':
-				var_line = false;
-				set_mode('EXPRESSION');
-				if (last_type === 'TK_END_EXPR' || last_type === 'TK_START_EXPR') {
-					// do nothing on (( and )( and ][ and ]( ..
-				} else if (last_type !== 'TK_WORD' && last_type !== 'TK_OPERATOR') {
-					print_space();
-				} else if (in_array(last_word, line_starters) && last_word !== 'function') {
-					print_space();
-				}
-				print_token();
-				break;
-
-			case 'TK_END_EXPR':
-				print_token();
-				restore_mode();
-				break;
-
-			case 'TK_START_BLOCK':
-
-				if (last_word === 'do') {
-					set_mode('DO_BLOCK');
-				} else {
-					set_mode('BLOCK');
-				}
-				if (last_type !== 'TK_OPERATOR' && last_type !== 'TK_START_EXPR') {
-					if (last_type === 'TK_START_BLOCK') {
-						print_newline();
-					} else {
-						print_space();
-					}
-				}
-				print_token();
-				indent();
-				break;
-
-			case 'TK_END_BLOCK':
-				if (last_type === 'TK_START_BLOCK') {
-					// nothing
-					trim_output();
-					unindent();
-				} else {
-					unindent();
-					print_newline();
-				}
-				print_token();
-				restore_mode();
-				break;
-
-			case 'TK_WORD':
-
-				if (do_block_just_closed) {
-					print_space();
-					print_token();
-					print_space();
-					break;
-				}
-
-				if (token_text === 'case' || token_text === 'default') {
-					if (last_text === ':') {
-						// switch cases following one another
-						remove_indent();
-					} else {
-						// case statement starts in the same line where switch
-						unindent();
-						print_newline();
-						indent();
-					}
-					print_token();
-					in_case = true;
-					break;
-				}
-
-
-				prefix = 'NONE';
-				if (last_type === 'TK_END_BLOCK') {
-					if (!in_array(token_text.toLowerCase(), ['else', 'catch', 'finally'])) {
-						prefix = 'NEWLINE';
-					} else {
-						prefix = 'SPACE';
-						print_space();
-					}
-				} else if (last_type === 'TK_END_COMMAND' && (current_mode === 'BLOCK' || current_mode === 'DO_BLOCK')) {
-					prefix = 'NEWLINE';
-				} else if (last_type === 'TK_END_COMMAND' && current_mode === 'EXPRESSION') {
-					prefix = 'SPACE';
-				} else if (last_type === 'TK_WORD') {
-					prefix = 'SPACE';
-				} else if (last_type === 'TK_START_BLOCK') {
-					prefix = 'NEWLINE';
-				} else if (last_type === 'TK_END_EXPR') {
-					print_space();
-					prefix = 'NEWLINE';
-				}
-
-				if (last_type !== 'TK_END_BLOCK' && in_array(token_text.toLowerCase(), ['else', 'catch', 'finally'])) {
-					print_newline();
-				} else if (in_array(token_text, line_starters) || prefix === 'NEWLINE') {
-					if (last_text === 'else') {
-						// no need to force newline on else break
-						print_space();
-					} else if ((last_type === 'TK_START_EXPR' || last_text === '=') && token_text === 'function') {
-						// no need to force newline on 'function': (function
-						// DONOTHING
-					} else if (last_type === 'TK_WORD' && (last_text === 'return' || last_text === 'throw')) {
-						// no newline between 'return nnn'
-						print_space();
-					} else if (last_type !== 'TK_END_EXPR') {
-						if ((last_type !== 'TK_START_EXPR' || token_text !== 'var') && last_text !== ':') {
-							// no need to force newline on 'var': for (var x = 0...)
-							if (token_text === 'if' && last_type === 'TK_WORD' && last_word === 'else') {
-								// no newline for } else if {
-								print_space();
-							} else {
-								print_newline();
-							}
-						}
-					} else {
-						if (in_array(token_text, line_starters) && last_text !== ')') {
-							print_newline();
-						}
-					}
-				} else if (prefix === 'SPACE') {
-					print_space();
-				}
-				print_token();
-				last_word = token_text;
-
-				if (token_text === 'var') {
-					var_line = true;
-					var_line_tainted = false;
-				}
-
-				break;
-
-			case 'TK_END_COMMAND':
-
-				print_token();
-				var_line = false;
-				break;
-
-			case 'TK_STRING':
-
-				if (last_type === 'TK_START_BLOCK' || last_type === 'TK_END_BLOCK') {
-					print_newline();
-				} else if (last_type === 'TK_WORD') {
-					print_space();
-				}
-				print_token();
-				break;
-
-			case 'TK_OPERATOR':
-
-				var start_delim = true;
-				var end_delim = true;
-				if (var_line && token_text !== ',') {
-					var_line_tainted = true;
-					if (token_text === ':') {
-						var_line = false;
-					}
-				}
-
-				if (token_text === ':' && in_case) {
-					print_token(); // colon really asks for separate treatment
-					print_newline();
-					break;
-				}
-
-				in_case = false;
-
-				if (token_text === ',') {
-					if (var_line) {
-						if (var_line_tainted) {
-							print_token();
-							print_newline();
-							var_line_tainted = false;
-						} else {
-							print_token();
-							print_space();
-						}
-					} else if (last_type === 'TK_END_BLOCK') {
-						print_token();
-						print_newline();
-					} else {
-						if (current_mode === 'BLOCK') {
-							print_token();
-							print_newline();
-						} else {
-							// EXPR od DO_BLOCK
-							print_token();
-							print_space();
-						}
-					}
-					break;
-				} else if (token_text === '--' || token_text === '++') { // unary operators special case
-					if (last_text === ';') {
-						// space for (;; ++i)
-						start_delim = true;
-						end_delim = false;
-					} else {
-						start_delim = false;
-						end_delim = false;
-					}
-				} else if (token_text === '!' && last_type === 'TK_START_EXPR') {
-					// special case handling: if (!a)
-					start_delim = false;
-					end_delim = false;
-				} else if (last_type === 'TK_OPERATOR') {
-					start_delim = false;
-					end_delim = false;
-				} else if (last_type === 'TK_END_EXPR') {
-					start_delim = true;
-					end_delim = true;
-				} else if (token_text === '.') {
-					// decimal digits or object.property
-					start_delim = false;
-					end_delim = false;
-
-				} else if (token_text === ':') {
-					// zz: xx
-					// can't differentiate ternary op, so for now it's a ? b: c; without space before colon
-					if (last_text.match(/^\d+$/)) {
-						// a little help for ternary a ? 1 : 0;
-						start_delim = true;
-					} else {
-						start_delim = false;
-					}
-				}
-				if (start_delim) {
-					print_space();
-				}
-
-				print_token();
-
-				if (end_delim) {
-					print_space();
-				}
-				break;
-
-			case 'TK_BLOCK_COMMENT':
-
-				print_newline();
-				print_token();
-				print_newline();
-				break;
-
-			case 'TK_COMMENT':
-
-				// print_newline();
-				print_space();
-				print_token();
-				print_newline();
-				break;
-
-			case 'TK_UNKNOWN':
-				print_token();
-				break;
-		}
-
-		last_type = token_type;
-		last_text = token_text;
-	}
-
-	return output.join('');
-
-}
 
 // ====================================
 var base2 = {
@@ -1618,9 +776,8 @@ var base2 = {
 	exports: "Base,Package,Abstract,Module,Enumerable,Map,Collection,RegGrp,Undefined,Null,This,True,False,assignID,detect,global",
 	namespace: ""
 };
-new
 
-function(_y) {
+new function(_y) {
 	var Undefined = K(),
 		Null = K(null),
 		True = K(true),

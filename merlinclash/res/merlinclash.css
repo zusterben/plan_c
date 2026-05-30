@@ -168,18 +168,12 @@ input[type=checkbox]{
 .remove_btn{
 	background: transparent url(/res/accountdelete.png) no-repeat scroll center top;
 }
-.edit_btn{
-  background: transparent url(/res/accountedit.png) no-repeat scroll center top;
-}
 .add_btn{
 	background: transparent url(/res/accountadd.png) no-repeat scroll center top;
 }
-.cloud_main_radius h2 { border-bottom:1px #AAA dashed;}
-.cloud_main_radius h3 { font-size:12px;color:#FFF;font-weight:normal;font-style: normal;}
-.cloud_main_radius h4 { font-size:12px;color:#FC0;font-weight:normal;font-style: normal;}
-.cloud_main_radius h5 { color:#FFF;font-weight:normal;font-style: normal;}
+
 /*ASUSWRT*/
-#app[skin=ASUSWRT] .FormTable_table th{
+#scapp[skin=ASUSWRT] .FormTable_table th{
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:normal;
 	text-align:center;
@@ -189,7 +183,7 @@ input[type=checkbox]{
 	border: 0px solid transparent;
 	background:#2F3A3E;
 }
-#app[skin=ASUSWRT] .show-btn0, #app[skin=ASUSWRT] .show-btn1, #app[skin=ASUSWRT] .show-btn2, #app[skin=ASUSWRT] .show-btn3, #app[skin=ASUSWRT] .show-btn4, #app[skin=ASUSWRT] .show-btn5, #app[skin=ASUSWRT] .show-btn6, #app[skin=ASUSWRT] .show-btn7, #app[skin=ASUSWRT] .show-btn8, #app[skin=ASUSWRT] .show-btn9, #app[skin=ASUSWRT] .show-btn10, #app[skin=ASUSWRT] .sub-node1, #app[skin=ASUSWRT] .sub-node2 {
+#scapp[skin=ASUSWRT] .show-btn0, #scapp[skin=ASUSWRT] .show-btn1, #scapp[skin=ASUSWRT] .show-btn2, #scapp[skin=ASUSWRT] .show-btn3, #scapp[skin=ASUSWRT] .show-btn4, #scapp[skin=ASUSWRT] .show-btn5, #scapp[skin=ASUSWRT] .show-btn6, #scapp[skin=ASUSWRT] .show-btn7, #scapp[skin=ASUSWRT] .show-btn8, #scapp[skin=ASUSWRT] .show-btn9, #scapp[skin=ASUSWRT] .show-btn10, #scapp[skin=ASUSWRT] .sub-node1, #scapp[skin=ASUSWRT] .sub-node2 {
 	font-size:10pt;
 	color: #fff;
 	padding: 10px 3.75px;
@@ -201,15 +195,15 @@ input[type=checkbox]{
 	border-bottom: none;
 	background: #67767d;
 }
-#app[skin=ASUSWRT] .show-btn0:hover, #app[skin=ASUSWRT] .show-btn1:hover, #app[skin=ASUSWRT] .show-btn2:hover, #app[skin=ASUSWRT] .show-btn3:hover, #app[skin=ASUSWRT] .show-btn4:hover, #app[skin=ASUSWRT] .show-btn5:hover, #app[skin=ASUSWRT] .show-btn6:hover, #app[skin=ASUSWRT] .show-btn7:hover, #app[skin=ASUSWRT] .show-btn8:hover, #app[skin=ASUSWRT] .show-btn9:hover, #app[skin=ASUSWRT] .show-btn10:hover, #app[skin=ASUSWRT] .sub-node1:hover, #app[skin=ASUSWRT] .sub-node2:hover, #app[skin=ASUSWRT] .active {
+#scapp[skin=ASUSWRT] .show-btn0:hover, #scapp[skin=ASUSWRT] .show-btn1:hover, #scapp[skin=ASUSWRT] .show-btn2:hover, #scapp[skin=ASUSWRT] .show-btn3:hover, #scapp[skin=ASUSWRT] .show-btn4:hover, #scapp[skin=ASUSWRT] .show-btn5:hover, #scapp[skin=ASUSWRT] .show-btn6:hover, #scapp[skin=ASUSWRT] .show-btn7:hover, #scapp[skin=ASUSWRT] .show-btn8:hover, #scapp[skin=ASUSWRT] .show-btn9:hover, #scapp[skin=ASUSWRT] .show-btn10:hover, #scapp[skin=ASUSWRT] .sub-node1:hover, #scapp[skin=ASUSWRT] .sub-node2:hover, #scapp[skin=ASUSWRT] .active {
 	border: 1px solid #2f3a3e;
 	background: #2f3a3e;
 }
-#app[skin=ASUSWRT] #tablet_0, #app[skin=ASUSWRT] #tablet_2, #app[skin=ASUSWRT] #tablet_3, #app[skin=ASUSWRT] #tablet_4, #app[skin=ASUSWRT] #tablet_5, #app[skin=ASUSWRT] #tablet_6, #app[skin=ASUSWRT] #tablet_7, #app[skin=ASUSWRT] #tablet_8, #app[skin=ASUSWRT] #tablet_9, {
+#scapp[skin=ASUSWRT] #tablet_0, #scapp[skin=ASUSWRT] #tablet_2, #scapp[skin=ASUSWRT] #tablet_3, #scapp[skin=ASUSWRT] #tablet_4, #scapp[skin=ASUSWRT] #tablet_5, #scapp[skin=ASUSWRT] #tablet_6, #scapp[skin=ASUSWRT] #tablet_7, #scapp[skin=ASUSWRT] #tablet_8, #scapp[skin=ASUSWRT] #tablet_9, {
 	margin:-1px 0px 0px 0px;
 	border:none;
 }
-#app[skin=ASUSWRT] textarea{
+#scapp[skin=ASUSWRT] textarea{
 	width:97%;
 	padding-left:4px;
 	padding-right:37px;
@@ -223,23 +217,23 @@ input[type=checkbox]{
 	line-height: 1.5;
 	background: rgb(0 0 0 / 50%);
 }
-#app[skin=ASUSWRT] .mc_outline{
+#scapp[skin=ASUSWRT] .mc_outline{
 	outline: 1px solid #222;
 }
-#app[skin=ASUSWRT] .input_option_2:hover, #app[skin=ASUSWRT] .input_option_2:focus{
+#scapp[skin=ASUSWRT] .input_option_2:hover, #scapp[skin=ASUSWRT] .input_option_2:focus{
 	outline: none;
 	border: 1px solid grey;
 	background-color:#576D73;
 }
-#app[skin=ASUSWRT] .sel_option:hover, #app[skin=ASUSWRT] .sel_option:focus{
+#scapp[skin=ASUSWRT] .sel_option:hover, #scapp[skin=ASUSWRT] .sel_option:focus{
 	outline: none;
 	border: 1px solid grey;
 	background-color:#576D73;
 }
-#app[skin=ASUSWRT] .sp_bottom_line{
+#scapp[skin=ASUSWRT] .sp_bottom_line{
 	border-bottom: none !important;
 }
-#app[skin=ASUSWRT] #merlinclash_links, #app[skin=ASUSWRT] #merlinclash_links2, #app[skin=ASUSWRT] #merlinclash_links3{
+#scapp[skin=ASUSWRT] #merlinclash_links, #scapp[skin=ASUSWRT] #merlinclash_links2, #scapp[skin=ASUSWRT] #merlinclash_sub_links{
 	resize: none;
 	height: 100px;
 	width: 440px;
@@ -251,11 +245,15 @@ input[type=checkbox]{
 	font-size: 10px;
 	padding-right: 0;
 }
-#app[skin=ASUSWRT] .FormTable {
+#scapp[skin=ASUSWRT] .FormTable {
 	outline: none;
 }
+#scapp[skin=ASUSWRT] .button-add {
+	background: rgba(79,100,105,0.8); 
+	color: #222; 
+}
 /*ROG*/
-#app[skin=ROG] .FormTable_table th{
+#scapp[skin=ROG] .FormTable_table th{
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:normal;
 	text-align:center;
@@ -265,7 +263,7 @@ input[type=checkbox]{
 	border: none;
 	background: #91071f;
 }
-#app[skin=ROG] .show-btn0, #app[skin=ROG] .show-btn1, #app[skin=ROG] .show-btn2, #app[skin=ROG] .show-btn3, #app[skin=ROG] .show-btn4, #app[skin=ROG] .show-btn5, #app[skin=ROG] .show-btn6, #app[skin=ROG] .show-btn7, #app[skin=ROG] .show-btn8, #app[skin=ROG] .show-btn9, #app[skin=ROG] .show-btn10, #app[skin=ROG] .sub-node1, #app[skin=ROG] .sub-node2 {
+#scapp[skin=ROG] .show-btn0, #scapp[skin=ROG] .show-btn1, #scapp[skin=ROG] .show-btn2, #scapp[skin=ROG] .show-btn3, #scapp[skin=ROG] .show-btn4, #scapp[skin=ROG] .show-btn5, #scapp[skin=ROG] .show-btn6, #scapp[skin=ROG] .show-btn7, #scapp[skin=ROG] .show-btn8, #scapp[skin=ROG] .show-btn9, #scapp[skin=ROG] .show-btn10, #scapp[skin=ROG] .sub-node1, #scapp[skin=ROG] .sub-node2 {
 	font-size:10pt;
 	color: #fff;
 	padding: 10px 3.75px;
@@ -274,15 +272,15 @@ input[type=checkbox]{
 	border: 1px solid #91071f;
 	background: none;
 }
-#app[skin=ROG] .show-btn0:hover, #app[skin=ROG] .show-btn1:hover, #app[skin=ROG] .show-btn2:hover, #app[skin=ROG] .show-btn3:hover, #app[skin=ROG] .show-btn4:hover, #app[skin=ROG] .show-btn5:hover, #app[skin=ROG] .show-btn6:hover, #app[skin=ROG] .show-btn7:hover, #app[skin=ROG] .show-btn8:hover, #app[skin=ROG] .show-btn9:hover, #app[skin=ROG] .show-btn10:hover, #app[skin=ROG] .sub-node1:hover, #app[skin=ROG] .sub-node2:hover, #app[skin=ROG] .active {
+#scapp[skin=ROG] .show-btn0:hover, #scapp[skin=ROG] .show-btn1:hover, #scapp[skin=ROG] .show-btn2:hover, #scapp[skin=ROG] .show-btn3:hover, #scapp[skin=ROG] .show-btn4:hover, #scapp[skin=ROG] .show-btn5:hover, #scapp[skin=ROG] .show-btn6:hover, #scapp[skin=ROG] .show-btn7:hover, #scapp[skin=ROG] .show-btn8:hover, #scapp[skin=ROG] .show-btn9:hover, #scapp[skin=ROG] .show-btn10:hover, #scapp[skin=ROG] .sub-node1:hover, #scapp[skin=ROG] .sub-node2:hover, #scapp[skin=ROG] .active {
 	border: 1px solid #91071f;
 	background: #91071f;
 }
-#app[skin=ROG] #tablet_0, #app[skin=ROG] #tablet_2, #app[skin=ROG] #tablet_3, #app[skin=ROG] #tablet_4, #app[skin=ROG] #tablet_5, #app[skin=ROG] #tablet_6, #app[skin=ROG] #tablet_7, #app[skin=ROG] #tablet_8, #app[skin=ROG] #tablet_9, {
+#scapp[skin=ROG] #tablet_0, #scapp[skin=ROG] #tablet_2, #scapp[skin=ROG] #tablet_3, #scapp[skin=ROG] #tablet_4, #scapp[skin=ROG] #tablet_5, #scapp[skin=ROG] #tablet_6, #scapp[skin=ROG] #tablet_7, #scapp[skin=ROG] #tablet_8, #scapp[skin=ROG] #tablet_9, {
 	margin:-1px 0px 0px 0px;
 	border:1px solid #91071f;
 }
-#app[skin=ROG] textarea{
+#scapp[skin=ROG] textarea{
 	width:97%;
 	padding-left:4px;
 	padding-right:37px;
@@ -296,21 +294,21 @@ input[type=checkbox]{
 	line-height: 1.5;
 	background:transparent;
 }
-#app[skin=ROG] .mc_outline{
+#scapp[skin=ROG] .mc_outline{
 	outline: 1px solid #91071f;
 }
-#app[skin=ROG] .input_option_2:hover, #app[skin=ROG] .input_option_2:focus{
+#scapp[skin=ROG] .input_option_2:hover, #scapp[skin=ROG] .input_option_2:focus{
 	border:1px solid #91071f;
 	background-color: #3e030d;
 }
-#app[skin=ROG] .sel_option:hover, #app[skin=ROG] .sel_option:focus{
+#scapp[skin=ROG] .sel_option:hover, #scapp[skin=ROG] .sel_option:focus{
 	border:1px solid #91071f;
 	background-color: #3e030d;
 }
-#app[skin=ROG] .sp_bottom_line{
+#scapp[skin=ROG] .sp_bottom_line{
 	border-bottom: 1px solid #91071f !important;
 }
-#app[skin=ROG] #merlinclash_links, #app[skin=ROG] #merlinclash_links2, #app[skin=ROG] #merlinclash_links3{
+#scapp[skin=ROG] #merlinclash_links, #scapp[skin=ROG] #merlinclash_links2, #scapp[skin=ROG] #merlinclash_sub_links{
 	resize: none;
 	height: 100px;
 	width: 440px;
@@ -322,11 +320,15 @@ input[type=checkbox]{
 	font-size: 10px;
 	padding-right: 0;
 }
-#app[skin=ROG] .FormTable {
+#scapp[skin=ROG] .FormTable {
 	outline: 1px solid #91071f;
 }
+#scapp[skin=ROG] .button-add {
+	background: rgba(0, 0, 0, 0.8); 
+	color: #91071f; 
+}
 /*TUF*/
-#app[skin=TUF] .FormTable_table th{
+#scapp[skin=TUF] .FormTable_table th{
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:normal;
 	text-align:center;
@@ -336,7 +338,7 @@ input[type=checkbox]{
 	border: none;
 	background: #92650F;
 }
-#app[skin=TUF] .show-btn0, #app[skin=TUF] .show-btn1, #app[skin=TUF] .show-btn2, #app[skin=TUF] .show-btn3, #app[skin=TUF] .show-btn4, #app[skin=TUF] .show-btn5, #app[skin=TUF] .show-btn6, #app[skin=TUF] .show-btn7, #app[skin=TUF] .show-btn8, #app[skin=TUF] .show-btn9, #app[skin=TUF] .show-btn10, #app[skin=TUF] .sub-node1, #app[skin=TUF] .sub-node2 {
+#scapp[skin=TUF] .show-btn0, #scapp[skin=TUF] .show-btn1, #scapp[skin=TUF] .show-btn2, #scapp[skin=TUF] .show-btn3, #scapp[skin=TUF] .show-btn4, #scapp[skin=TUF] .show-btn5, #scapp[skin=TUF] .show-btn6, #scapp[skin=TUF] .show-btn7, #scapp[skin=TUF] .show-btn8, #scapp[skin=TUF] .show-btn9, #scapp[skin=TUF] .show-btn10, #scapp[skin=TUF] .sub-node1, #scapp[skin=TUF] .sub-node2 {
 	font-size:10pt;
 	color: #fff;
 	padding: 10px 3.75px;
@@ -345,15 +347,15 @@ input[type=checkbox]{
 	border: 1px solid #92650F;
 	background: none;
 }
-#app[skin=TUF] .show-btn0:hover, #app[skin=TUF] .show-btn1:hover, #app[skin=TUF] .show-btn2:hover, #app[skin=TUF] .show-btn3:hover, #app[skin=TUF] .show-btn4:hover, #app[skin=TUF] .show-btn5:hover, #app[skin=TUF] .show-btn6:hover, #app[skin=TUF] .show-btn7:hover, #app[skin=TUF] .show-btn8:hover, #app[skin=TUF] .show-btn9:hover, #app[skin=TUF] .show-btn10:hover, #app[skin=TUF] .sub-node1:hover, #app[skin=TUF] .sub-node2:hover, #app[skin=TUF] .active {
+#scapp[skin=TUF] .show-btn0:hover, #scapp[skin=TUF] .show-btn1:hover, #scapp[skin=TUF] .show-btn2:hover, #scapp[skin=TUF] .show-btn3:hover, #scapp[skin=TUF] .show-btn4:hover, #scapp[skin=TUF] .show-btn5:hover, #scapp[skin=TUF] .show-btn6:hover, #scapp[skin=TUF] .show-btn7:hover, #scapp[skin=TUF] .show-btn8:hover, #scapp[skin=TUF] .show-btn9:hover, #scapp[skin=TUF] .show-btn10:hover, #scapp[skin=TUF] .sub-node1:hover, #scapp[skin=TUF] .sub-node2:hover, #scapp[skin=TUF] .active {
 	border: 1px solid #92650F;
 	background: #92650F;
 }
-#app[skin=TUF] #tablet_0, #app[skin=TUF] #tablet_2, #app[skin=TUF] #tablet_3, #app[skin=TUF] #tablet_4, #app[skin=TUF] #tablet_5, #app[skin=TUF] #tablet_6, #app[skin=TUF] #tablet_7, #app[skin=TUF] #tablet_8, #app[skin=TUF] #tablet_9, {
+#scapp[skin=TUF] #tablet_0, #scapp[skin=TUF] #tablet_2, #scapp[skin=TUF] #tablet_3, #scapp[skin=TUF] #tablet_4, #scapp[skin=TUF] #tablet_5, #scapp[skin=TUF] #tablet_6, #scapp[skin=TUF] #tablet_7, #scapp[skin=TUF] #tablet_8, #scapp[skin=TUF] #tablet_9, {
 	margin:-1px 0px 0px 0px;
 	border:1px solid #92650F;
 }
-#app[skin=TUF] textarea{
+#scapp[skin=TUF] textarea{
 	width:97%;
 	padding-left:4px;
 	padding-right:37px;
@@ -367,21 +369,21 @@ input[type=checkbox]{
 	line-height: 1.5;
 	background:transparent;
 }
-#app[skin=TUF] .mc_outline{
+#scapp[skin=TUF] .mc_outline{
 	outline: 1px solid #92650F;
 }
-#app[skin=TUF] .input_option_2:hover, #app[skin=TUF] .input_option_2:focus{
+#scapp[skin=TUF] .input_option_2:hover, #scapp[skin=TUF] .input_option_2:focus{
 	border:1px solid #92650F;
 	background-color: #3e2902;
 }
-#app[skin=TUF] .sel_option:hover, #app[skin=TUF] .sel_option:focus{
+#scapp[skin=TUF] .sel_option:hover, #scapp[skin=TUF] .sel_option:focus{
 	border:1px solid #92650F;
 	background-color: #3e2902;
 }
-#app[skin=TUF] .sp_bottom_line{
+#scapp[skin=TUF] .sp_bottom_line{
 	border-bottom: 1px solid #92650F !important;
 }
-#app[skin=TUF] #merlinclash_links, #app[skin=TUF] #merlinclash_links2, #app[skin=TUF] #merlinclash_links3{
+#scapp[skin=TUF] #merlinclash_links, #scapp[skin=TUF] #merlinclash_links2, #scapp[skin=TUF] #merlinclash_sub_links{
 	resize: none;
 	height: 100px;
 	width: 440px;
@@ -393,11 +395,15 @@ input[type=checkbox]{
 	font-size: 10px;
 	padding-right: 0;
 }
-#app[skin=TUF] .FormTable {
+#scapp[skin=TUF] .FormTable {
 	outline: 1px solid #92650F;
 }
+#scapp[skin=TUF] .button-add {
+	background: rgba(0, 0, 0, 0.8); 
+	color: #92650F; 
+}
 /*TS*/
-#app[skin=TS] .FormTable_table th{
+#scapp[skin=TS] .FormTable_table th{
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:normal;
 	text-align:center;
@@ -407,7 +413,7 @@ input[type=checkbox]{
 	border: none;
 	background: #2ed9c3;
 }
-#app[skin=TS] .show-btn0, #app[skin=TS] .show-btn1, #app[skin=TS] .show-btn2, #app[skin=TS] .show-btn3, #app[skin=TS] .show-btn4, #app[skin=TS] .show-btn5, #app[skin=TS] .show-btn6, #app[skin=TS] .show-btn7, #app[skin=TS] .show-btn8, #app[skin=TS] .show-btn9, #app[skin=TS] .show-btn10, #app[skin=TS] .sub-node1, #app[skin=TS] .sub-node2 {
+#scapp[skin=TS] .show-btn0, #scapp[skin=TS] .show-btn1, #scapp[skin=TS] .show-btn2, #scapp[skin=TS] .show-btn3, #scapp[skin=TS] .show-btn4, #scapp[skin=TS] .show-btn5, #scapp[skin=TS] .show-btn6, #scapp[skin=TS] .show-btn7, #scapp[skin=TS] .show-btn8, #scapp[skin=TS] .show-btn9, #scapp[skin=TS] .show-btn10, #scapp[skin=TS] .sub-node1, #scapp[skin=TS] .sub-node2 {
 	font-size:10pt;
 	color: #fff;
 	padding: 10px 3.75px;
@@ -416,15 +422,15 @@ input[type=checkbox]{
 	border: 1px solid #2ed9c3;
 	background: none;
 }
-#app[skin=TS] .show-btn0:hover, #app[skin=TS] .show-btn1:hover, #app[skin=TS] .show-btn2:hover, #app[skin=TS] .show-btn3:hover, #app[skin=TS] .show-btn4:hover, #app[skin=TS] .show-btn5:hover, #app[skin=TS] .show-btn6:hover, #app[skin=TS] .show-btn7:hover, #app[skin=TS] .show-btn8:hover, #app[skin=TS] .show-btn9:hover, #app[skin=TS] .show-btn10:hover, #app[skin=TS] .sub-node1:hover, #app[skin=TS] .sub-node2:hover, #app[skin=TS] .active {
+#scapp[skin=TS] .show-btn0:hover, #scapp[skin=TS] .show-btn1:hover, #scapp[skin=TS] .show-btn2:hover, #scapp[skin=TS] .show-btn3:hover, #scapp[skin=TS] .show-btn4:hover, #scapp[skin=TS] .show-btn5:hover, #scapp[skin=TS] .show-btn6:hover, #scapp[skin=TS] .show-btn7:hover, #scapp[skin=TS] .show-btn8:hover, #scapp[skin=TS] .show-btn9:hover, #scapp[skin=TS] .show-btn10:hover, #scapp[skin=TS] .sub-node1:hover, #scapp[skin=TS] .sub-node2:hover, #scapp[skin=TS] .active {
 	border: 1px solid #2ed9c3;
 	background: #2ed9c3;
 }
-#app[skin=TS] #tablet_0, #app[skin=TS] #tablet_2, #app[skin=TS] #tablet_3, #app[skin=TS] #tablet_4, #app[skin=TS] #tablet_5, #app[skin=TS] #tablet_6, #app[skin=TS] #tablet_7, #app[skin=TS] #tablet_8, #app[skin=TS] #tablet_9, {
+#scapp[skin=TS] #tablet_0, #scapp[skin=TS] #tablet_2, #scapp[skin=TS] #tablet_3, #scapp[skin=TS] #tablet_4, #scapp[skin=TS] #tablet_5, #scapp[skin=TS] #tablet_6, #scapp[skin=TS] #tablet_7, #scapp[skin=TS] #tablet_8, #scapp[skin=TS] #tablet_9, {
 	margin:-1px 0px 0px 0px;
 	border:1px solid #2ed9c3;
 }
-#app[skin=TS] textarea{
+#scapp[skin=TS] textarea{
 	width:97%;
 	padding-left:4px;
 	padding-right:37px;
@@ -438,21 +444,21 @@ input[type=checkbox]{
 	line-height: 1.5;
 	background:transparent;
 }
-#app[skin=TS] .mc_outline{
+#scapp[skin=TS] .mc_outline{
 	outline: 1px solid #2ed9c3;
 }
-#app[skin=TS] .input_option_2:hover, #app[skin=TS] .input_option_2:focus{
+#scapp[skin=TS] .input_option_2:hover, #scapp[skin=TS] .input_option_2:focus{
 	border:1px solid #2ed9c3;
 	background-color: #3e2902;
 }
-#app[skin=TS] .sel_option:hover, #app[skin=TS] .sel_option:focus{
+#scapp[skin=TS] .sel_option:hover, #scapp[skin=TS] .sel_option:focus{
 	border:1px solid #2ed9c3;
 	background-color: #3e2902;
 }
-#app[skin=TS] .sp_bottom_line{
+#scapp[skin=TS] .sp_bottom_line{
 	border-bottom: 1px solid #2ed9c3 !important;
 }
-#app[skin=TS] #merlinclash_links, #app[skin=TS] #merlinclash_links2, #app[skin=TS] #merlinclash_links3{
+#scapp[skin=TS] #merlinclash_links, #scapp[skin=TS] #merlinclash_links2, #scapp[skin=TS] #merlinclash_sub_links{
 	resize: none;
 	height: 100px;
 	width: 440px;
@@ -464,6 +470,102 @@ input[type=checkbox]{
 	font-size: 10px;
 	padding-right: 0;
 }
-#app[skin=TS] .FormTable {
+#scapp[skin=TS] .FormTable {
 	outline: 1px solid #2ed9c3;
+}
+#scapp[skin=TS] .button-add {
+	background: rgba(0, 0, 0, 0.8); 
+	color: #2ed9c3; 
+}
+/*SWRT*/
+#scapp[skin=SWRT] .FormTable_table th{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	text-align:center;
+	font-size:12px;
+	height:25px;
+	border-collapse: collapse;
+	border: none;
+	background: #fefefe;
+}
+#scapp[skin=SWRT] .show-btn0, #scapp[skin=SWRT] .show-btn1, #scapp[skin=SWRT] .show-btn2, #scapp[skin=SWRT] .show-btn3, #scapp[skin=SWRT] .show-btn4, #scapp[skin=SWRT] .show-btn5, #scapp[skin=SWRT] .show-btn6, #scapp[skin=SWRT] .show-btn7, #scapp[skin=SWRT] .show-btn8, #scapp[skin=SWRT] .show-btn9, #scapp[skin=SWRT] .show-btn10, #scapp[skin=SWRT] .sub-node1, #scapp[skin=SWRT] .sub-node2 {
+	font-size:10pt;
+	color: #006ce1;
+	padding: 10px 3.75px;
+	border-radius: 5px 5px 0px 0px;
+	width:8.42%;
+	border: 1px solid #006ce1;
+	background: none;
+}
+#scapp[skin=SWRT] .show-btn0:hover, #scapp[skin=SWRT] .show-btn1:hover, #scapp[skin=SWRT] .show-btn2:hover, #scapp[skin=SWRT] .show-btn3:hover, #scapp[skin=SWRT] .show-btn4:hover, #scapp[skin=SWRT] .show-btn5:hover, #scapp[skin=SWRT] .show-btn6:hover, #scapp[skin=SWRT] .show-btn7:hover, #scapp[skin=SWRT] .show-btn8:hover, #scapp[skin=SWRT] .show-btn9:hover, #scapp[skin=SWRT] .show-btn10:hover, #scapp[skin=SWRT] .sub-node1:hover, #scapp[skin=SWRT] .sub-node2:hover, #scapp[skin=SWRT] .active {
+	border: 1px solid #006ce1;
+	background: #006ce1;
+	color: #fff;
+}
+#scapp[skin=SWRT] #tablet_0, #scapp[skin=SWRT] #tablet_2, #scapp[skin=SWRT] #tablet_3, #scapp[skin=SWRT] #tablet_4, #scapp[skin=SWRT] #tablet_5, #scapp[skin=SWRT] #tablet_6, #scapp[skin=SWRT] #tablet_7, #scapp[skin=SWRT] #tablet_8, #scapp[skin=SWRT] #tablet_9, {
+	margin:-1px 0px 0px 0px;
+	border:1px solid #006ce1;
+}
+#scapp[skin=SWRT] textarea{
+	width:97%;
+	padding-left:4px;
+	padding-right:37px;
+	font-family:'Lucida Console';
+	font-size:11px;
+	line-height:1.0;
+	color:#FFFFFF;
+	outline:none;
+	overflow-x:hidden;
+	border:none;
+	line-height: 1.5;
+	background:transparent;
+}
+#scapp[skin=SWRT] .mc_outline{
+	outline: 1px solid #006ce1;
+}
+#scapp[skin=SWRT] .input_option_2:hover, #scapp[skin=SWRT] .input_option_2:focus{
+	border:1px solid #006ce1;
+	background:transparent;
+}
+#scapp[skin=SWRT] .sel_option:hover, #scapp[skin=SWRT] .sel_option:focus{
+	border:1px solid #006ce1;
+	background:transparent;
+}
+#scapp[skin=SWRT] .sp_bottom_line{
+	border-bottom: 1px solid #006ce1 !important;
+}
+#scapp[skin=SWRT] #merlinclash_links, #scapp[skin=SWRT] #merlinclash_links2, #scapp[skin=SWRT] #merlinclash_sub_links{
+	resize: none;
+	height: 100px;
+	width: 500px;
+	padding-top: 5px;
+	background-color: none;
+	border: 1px solid #006ce1;
+	line-height:1.2;
+	word-break: break-all;
+	font-size: 10px;
+	padding-right: 0;
+}
+#scapp[skin=SWRT] .FormTable {
+	outline: 1px solid #006ce1;
+}
+#scapp[skin=SWRT] .button-add {
+	background: none; 
+	color: #006ce1; 
+}
+#scapp[skin=SWRT] .content_status {
+	box-shadow: 3px 3px 10px #006ce1 !important;
+}
+#scapp[skin=SWRT] .contentMKP_qis, #scapp[skin=SWRT] .loadingBarBlock {
+	background: #fefefe;
+	box-shadow: 3px 3px 10px #006ce1 !important;
+}
+#scapp[skin=SWRT] #common_text_editor_text, #scapp[skin=SWRT] #log_content2, #scapp[skin=SWRT] #ok_button {
+	background: #fefefe !important;
+}
+#scapp[skin=SWRT] #clog_content3 {
+	border: 1px solid #006ce1;
+}
+#scapp[skin=SWRT] #clash_state3 {
+	color: 1px solid #006ce1 !important;
 }

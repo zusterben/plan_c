@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE=merlinclash
-VERSION=25.07.07
+VERSION=26.05.30
 TITLE="Merlin Clash"
 DESCRIPTION="Merlin Clash"
 HOME_URL=Module_merlinclash.asp
@@ -21,8 +21,7 @@ do_build() {
 	rm -rf $MODULE/bin
 	mkdir -p $MODULE/bin
 	cp -rf ./bin_arch/$1/clash $MODULE/bin/
-	cp -rf ./bin_arch/$1/subconverter $MODULE/bin/
-	cp -rf ./bin_arch/$1/client_linux $MODULE/bin/
+	cp -rf ./bin_arch/$1/yq $MODULE/bin/
 	tar -zcvf ${MODULE}.tar.gz $MODULE
 	md5value=`md5sum ${MODULE}.tar.gz|tr " " "\n"|sed -n 1p`
 	cat > ./version <<-EOF

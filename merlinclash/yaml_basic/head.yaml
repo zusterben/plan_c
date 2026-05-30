@@ -1,16 +1,25 @@
-port: 3333
-socks-port: 23456
+#本文件很重要，不懂勿动
+#端口
+mixed-port: 23456
 redir-port: 23457
-allow-lan: true
-mode: rule
-log-level: error
+#面板设置
 external-controller: 192.168.2.1:9990
-experimental:
-  ignore-resolve-fail: true
 external-ui: dashboard
-external-ui-name: metacubexd
+external-ui-name: zashboard
+external-ui-url: https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip
 secret: "clash"
+#缓存设置
 profile:
   store-selected: false
   store-fake-ip: false
+#GEO数据库
+geodata-mode: true
+geox-url:
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat"
+  geosite: "https://testingcf.jsdelivr.net/gh/flyhigherpi/merlinclash_clash_related@refs/heads/master/geosite/geosite.dat"
+#启动参数
+allow-lan: true
+mode: rule
+log-level: error
 ipv6: false
+unified-delay: true

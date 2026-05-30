@@ -1,0 +1,1041 @@
+proxy-groups:
+  - name: 🎯 总模式
+    type: select
+    proxies:
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - DIRECT
+  - name: ♻️ 手动切换
+    type: select
+    include-all: true
+    proxies:
+      - DIRECT
+      - REJECT
+  - name: ♻️ 手动切换1
+    type: select
+    include-all: true
+    proxies:
+      - DIRECT
+      - REJECT
+  - name: ♻️ 手动切换2
+    type: select
+    include-all: true
+    proxies:
+      - DIRECT
+      - REJECT
+  - name: ♻️ 手动切换3
+    type: select
+    include-all: true
+    proxies:
+      - DIRECT
+      - REJECT
+  - name: ♻️ 手动切换4
+    type: select
+    include-all: true
+    proxies:
+      - DIRECT
+      - REJECT
+  - name: ♻️ 手动切换5
+    type: select
+    include-all: true
+    proxies:
+      - DIRECT
+      - REJECT
+  - name: 📬 国外dns
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+  - name: 🧩 微软服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+  - name: 📲 聊天软件
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🤖 OpenAI
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 📹 YouTube
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🎥 NETFLIX
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🎬 Prime
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🎬 ParamountPlus
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 👪 DisneyPlus
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🎬 HBO
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🎬 Hulu USA
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🎬 Spotify
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: ⭐️ StarPlus
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: ⚽ DAZN
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🎼 TikTok
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 📺 巴哈姆特
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 📟 哔哩哔哩
+    type: select
+    proxies:
+      - DIRECT
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+  - name: 🎬 爱奇艺
+    type: select
+    proxies:
+      - DIRECT
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+  - name: 🔍 谷歌服务
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: ⛩ 日韩媒体
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🌏 港台媒体
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🇺🇳 国外网站
+    type: select
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+  - name: 🇨🇳 国内网站
+    type: select
+    proxies:
+      - DIRECT
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - DIRECT
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - PASS
+  - name: ⛔ 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - PASS
+  - name: 🇭🇰 香港节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 100
+    filter: '^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b))).*$'
+    include-all: true
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 100
+    filter: '^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b))).*$'
+    include-all: true
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 100
+    filter: '^(?=.*((?i)🇨🇳|🇹🇼|TW|台湾)).*$'
+    include-all: true
+  - name: 🇸🇬 新加坡节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 100
+    filter: '^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b))).*$'
+    include-all: true
+  - name: 🇰🇷 韩国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 100
+    filter: '^(?=.*((?i)🇰🇷|韩国|首尔|(\b(KR|Korea)\b))).*$'
+    include-all: true
+  - name: 🇺🇸 美国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 100
+    filter: '^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b))).*$'
+    include-all: true
+  - name: 🌍 其他节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 100
+    filter: '^(?!.*(🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|🇭🇰|香港|HK|Hong|🇯🇵|日本|川日|东京|大阪|泉日|埼玉|JP|Japan|🇨🇳|台湾|🇹🇼|TW|🇸🇬|新加坡|狮|SG|Singapore|🇰🇷|韩国|首尔|KR|Korea)).*$'
+    include-all: true
+  - name: GLOBAL
+    type: select
+    include-all: true
+    proxies:
+      - 🎯 总模式
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🌍 其他节点
+      - ♻️ 手动切换
+      - ♻️ 手动切换1
+      - ♻️ 手动切换2
+      - ♻️ 手动切换3
+      - ♻️ 手动切换4
+      - ♻️ 手动切换5
+      - DIRECT
+      - REJECT
+
+rule-providers:
+  DnsProxy:
+    type: file
+    path: ./rule_configs/Providers/Other/DnsProxy.yaml
+    behavior: classical
+    format: yaml
+  Direct:
+    type: file
+    path: ./rule_configs/Providers/Other/Direct.yaml
+    behavior: classical
+    format: yaml
+  LocalAreaNetwork:
+    type: file
+    path: ./rule_configs/Providers/LocalAreaNetwork.yaml
+    behavior: classical
+    format: yaml
+  UnBan:
+    type: file
+    path: ./rule_configs/Providers/UnBan.yaml
+    behavior: classical
+    format: yaml
+  BanAD:
+    type: file
+    path: ./rule_configs/Providers/BanAD.yaml
+    behavior: classical
+    format: yaml
+  BanADP:
+    type: file
+    path: ./rule_configs/Providers/Other/BanADP.yaml
+    behavior: classical
+    format: yaml
+  BanProgramAD:
+    type: file
+    path: ./rule_configs/Providers/BanProgramAD.yaml
+    behavior: classical
+    format: yaml
+  Apple:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Apple.yaml
+    behavior: classical
+    format: yaml
+  AppleNews:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/AppleNews.yaml
+    behavior: classical
+    format: yaml
+  AppleTV:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/AppleTV.yaml
+    behavior: classical
+    format: yaml
+  Microsoft:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Microsoft.yaml
+    behavior: classical
+    format: yaml
+  OneDrive:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/OneDrive.yaml
+    behavior: classical
+    format: yaml
+  TelegramP:
+    type: file
+    path: ./rule_configs/Providers/Other/Telegram.yaml
+    behavior: classical
+    format: yaml
+  Telegram:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Telegram.yaml
+    behavior: classical
+    format: yaml
+  Whatsapp:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Whatsapp.yaml
+    behavior: classical
+    format: yaml
+  Line:
+    type: file
+    path: ./rule_configs/Providers/Other/Line.yaml
+    behavior: classical
+    format: yaml
+  KakaoTalk:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/KakaoTalk.yaml
+    behavior: classical
+    format: yaml
+  ChatGPT:
+    type: file
+    path: ./rule_configs/Providers/Other/ChatGPT.yaml
+    behavior: classical
+    format: yaml
+  OpenAi:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/OpenAi.yaml
+    behavior: classical
+    format: yaml
+  Epic:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Epic.yaml
+    behavior: classical
+    format: yaml
+  Sony:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Sony.yaml
+    behavior: classical
+    format: yaml
+  Steam:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Steam.yaml
+    behavior: classical
+    format: yaml
+  TencentLolm:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/TencentLolm.yaml
+    behavior: classical
+    format: yaml
+  Games:
+    type: file
+    path: ./rule_configs/Providers/Other/Games.yaml
+    behavior: classical
+    format: yaml
+  YouTube:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/YouTube.yaml
+    behavior: classical
+    format: yaml
+  Netflix:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Netflix.yaml
+    behavior: classical
+    format: yaml
+  Niconico:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Niconico.yaml
+    behavior: classical
+    format: yaml
+  HuluJapan:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/HuluJapan.yaml
+    behavior: classical
+    format: yaml
+  Japonx:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Japonx.yaml
+    behavior: classical
+    format: yaml
+  AbemaTV:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/AbemaTV.yaml
+    behavior: classical
+    format: yaml
+  Pixiv:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Pixiv.yaml
+    behavior: classical
+    format: yaml
+  Dmm:
+    type: file
+    path: ./rule_configs/Providers/Other/Dmm.yaml
+    behavior: classical
+    format: yaml
+  Bahamut:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Bahamut.yaml
+    behavior: classical
+    format: yaml
+  TwMedia:
+    type: file
+    path: ./rule_configs/Providers/Other/TwMedia.yaml
+    behavior: classical
+    format: yaml
+  LineTV:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/LineTV.yaml
+    behavior: classical
+    format: yaml
+  KKTV:
+    type: file
+    path: ./rule_configs/Providers/Other/KKTV.yaml
+    behavior: classical
+    format: yaml
+  LiTV:
+    type: file
+    path: ./rule_configs/Providers/Other/LiTV.yaml
+    behavior: classical
+    format: yaml
+  MyTVSuper:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/MyTVSuper.yaml
+    behavior: classical
+    format: yaml
+  HWTV:
+    type: file
+    path: ./rule_configs/Providers/Other/HWTV.yaml
+    behavior: classical
+    format: yaml
+  ViuTV:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/ViuTV.yaml
+    behavior: classical
+    format: yaml
+  TaiWanGood:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/TaiWanGood.yaml
+    behavior: classical
+    format: yaml
+  Paramount:
+    type: file
+    path: ./rule_configs/Providers/Other/Paramount.yaml
+    behavior: classical
+    format: yaml
+  DAZN:
+    type: file
+    path: ./rule_configs/Providers/Other/DAZN.yaml
+    behavior: classical
+    format: yaml
+  Starplus:
+    type: file
+    path: ./rule_configs/Providers/Other/Starplus.yaml
+    behavior: classical
+    format: yaml
+  ProxyMediaP:
+    type: file
+    path: ./rule_configs/Providers/Other/ProxyMedia.yaml
+    behavior: classical
+    format: yaml
+  ProxyMedia:
+    type: file
+    path: ./rule_configs/Providers/ProxyMedia.yaml
+    behavior: classical
+    format: yaml
+  Google:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Google.yaml
+    behavior: classical
+    format: yaml
+  GoogleIP:
+    type: file
+    path: ./rule_configs/Providers/Other/GoogleIP.yaml
+    behavior: classical
+    format: yaml
+  GoogleCNProxyIP:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/GoogleCNProxyIP.yaml
+    behavior: classical
+    format: yaml
+  GoogleFCM:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/GoogleFCM.yaml
+    behavior: classical
+    format: yaml
+  GoogleCN:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/GoogleCN.yaml
+    behavior: classical
+    format: yaml
+  Proxy:
+    type: file
+    path: ./rule_configs/Providers/Other/Proxy.yaml
+    behavior: classical
+    format: yaml
+  ProxyGFWlist:
+    type: file
+    path: ./rule_configs/Providers/ProxyGFWlist.yaml
+    behavior: classical
+    format: yaml
+  ChinaMedia:
+    type: file
+    path: ./rule_configs/Providers/ChinaMedia.yaml
+    behavior: classical
+    format: yaml
+  ChinaDomain:
+    type: file
+    path: ./rule_configs/Providers/ChinaDomain.yaml
+    behavior: classical
+    format: yaml
+  ChinaCompanyIp:
+    type: file
+    path: ./rule_configs/Providers/ChinaCompanyIp.yaml
+    behavior: ipcidr
+    format: yaml
+  China:
+    type: file
+    path: ./rule_configs/Providers/Other/China.yaml
+    behavior: classical
+    format: yaml
+  #多媒体全量
+  TikTok:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/TikTok.yaml
+    behavior: classical
+    format: yaml
+  TikTokp:
+    type: file
+    path: ./rule_configs/Providers/Other/TikTok.yaml
+    behavior: classical
+    format: yaml
+  DisneyPlus:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/DisneyPlus.yaml
+    behavior: classical
+    format: yaml
+  Amazon:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Amazon.yaml
+    behavior: classical
+    format: yaml
+  HBO:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/HBO.yaml
+    behavior: classical
+    format: yaml
+  Spotify:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Spotify.yaml
+    behavior: classical
+    format: yaml
+  BilibiliHMT:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/BilibiliHMT.yaml
+    behavior: classical
+    format: yaml
+  Bilibili:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Bilibili.yaml
+    behavior: classical
+    format: yaml
+  Iqiyi:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/Iqiyi.yaml
+    behavior: classical
+    format: yaml
+  IqiyiHMT:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/IqiyiHMT.yaml
+    behavior: classical
+    format: yaml
+  Hulu:
+    type: file
+    path: ./rule_configs/Providers/Other/Hulu.yaml
+    behavior: classical
+    format: yaml
+  NetflixIP:
+    type: file
+    path: ./rule_configs/Providers/Ruleset/NetflixIP.yaml
+    behavior: classical
+    format: yaml
+
+rules:
+  - RULE-SET,DnsProxy,📬 国外dns
+  - RULE-SET,Direct,DIRECT
+  - RULE-SET,LocalAreaNetwork,DIRECT
+  - DOMAIN,dl.google.com,🔍 谷歌服务
+  - DOMAIN-SUFFIX,googletraveladservices.com,🔍 谷歌服务
+  - RULE-SET,UnBan,🇨🇳 国内网站
+  - RULE-SET,BanAD,🛑 广告拦截
+  - RULE-SET,BanADP,⛔ 应用净化
+  - RULE-SET,BanProgramAD,⛔ 应用净化
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,AppleNews,🍎 苹果服务
+  - RULE-SET,AppleTV,🍎 苹果服务
+  - RULE-SET,Microsoft,🧩 微软服务
+  - RULE-SET,OneDrive,🧩 微软服务
+  - DOMAIN-KEYWORD,beetalk,📲 聊天软件
+  - RULE-SET,TelegramP,📲 聊天软件
+  - RULE-SET,Telegram,📲 聊天软件
+  - RULE-SET,Whatsapp,📲 聊天软件
+  - RULE-SET,Line,📲 聊天软件
+  - RULE-SET,KakaoTalk,📲 聊天软件
+  - RULE-SET,ChatGPT,🤖 OpenAI
+  - RULE-SET,OpenAi,🤖 OpenAI
+  - RULE-SET,Epic,🎮 游戏平台
+  - RULE-SET,Sony,🎮 游戏平台
+  - RULE-SET,Steam,🎮 游戏平台
+  - RULE-SET,TencentLolm,🎮 游戏平台
+  - RULE-SET,Games,🎮 游戏平台
+  - RULE-SET,TikTok,🎼 TikTok
+  - RULE-SET,TikTokp,🎼 TikTok
+  - RULE-SET,YouTube,📹 YouTube
+  - RULE-SET,Netflix,🎥 NETFLIX
+  - RULE-SET,Starplus,⭐️ StarPlus
+  - RULE-SET,DisneyPlus,👪 DisneyPlus
+  - RULE-SET,DAZN,⚽ DAZN
+  - RULE-SET,Paramount,🎬 ParamountPlus
+  - RULE-SET,Amazon,🎬 Prime
+  - RULE-SET,HBO,🎬 HBO
+  - RULE-SET,Spotify,🎬 Spotify
+  - RULE-SET,Bahamut,📺 巴哈姆特
+  - RULE-SET,TwMedia,📺 巴哈姆特
+  - RULE-SET,BilibiliHMT,📟 哔哩哔哩
+  - RULE-SET,Bilibili,📟 哔哩哔哩
+  - RULE-SET,IqiyiHMT,🎬 爱奇艺
+  - RULE-SET,Iqiyi,🎬 爱奇艺
+  - RULE-SET,Niconico,⛩ 日韩媒体
+  - RULE-SET,HuluJapan,⛩ 日韩媒体
+  - RULE-SET,Japonx,⛩ 日韩媒体
+  - RULE-SET,AbemaTV,⛩ 日韩媒体
+  - RULE-SET,Pixiv,⛩ 日韩媒体
+  - RULE-SET,Dmm,⛩ 日韩媒体
+  - RULE-SET,TwMedia,🌏 港台媒体
+  - RULE-SET,LineTV,🌏 港台媒体
+  - RULE-SET,KKTV,🌏 港台媒体
+  - RULE-SET,LiTV,🌏 港台媒体
+  - RULE-SET,MyTVSuper,🌏 港台媒体
+  - RULE-SET,HWTV,🌏 港台媒体
+  - RULE-SET,ViuTV,🌏 港台媒体
+  - RULE-SET,TaiWanGood,🌏 港台媒体
+  - RULE-SET,Hulu,🎬 Hulu USA
+  - RULE-SET,NetflixIP,🎥 NETFLIX
+  - RULE-SET,DAZN,🌍 国外媒体
+  - RULE-SET,ProxyMediaP,🌍 国外媒体
+  - RULE-SET,ProxyMedia,🌍 国外媒体
+  - RULE-SET,Google,🔍 谷歌服务
+  - RULE-SET,GoogleIP,🔍 谷歌服务
+  - RULE-SET,GoogleCNProxyIP,🔍 谷歌服务
+  - RULE-SET,GoogleFCM,🔍 谷歌服务
+  - RULE-SET,GoogleCN,🔍 谷歌服务
+  - RULE-SET,Proxy,🇺🇳 国外网站
+  - RULE-SET,ProxyGFWlist,🇺🇳 国外网站
+  - RULE-SET,ChinaMedia,🇨🇳 国内网站
+  - RULE-SET,ChinaDomain,🇨🇳 国内网站
+  - RULE-SET,ChinaCompanyIp,🇨🇳 国内网站
+  - RULE-SET,China,🇨🇳 国内网站
+  - MATCH,🐟 漏网之鱼

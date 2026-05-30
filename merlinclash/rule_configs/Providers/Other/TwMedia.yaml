@@ -1,0 +1,4 @@
+payload:
+# 代理补充规则
+  - DOMAIN-SUFFIX,tw.manhuagui.com
+  - DOMAIN-SUFFIX,i.hamreus.com

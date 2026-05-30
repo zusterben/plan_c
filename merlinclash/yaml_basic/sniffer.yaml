@@ -11,7 +11,7 @@ sniffer:
       ports: [80, 8080-8880]
       override-destination: false
   force-domain:
-    - +.v2ex.com
+    - '+.v2ex.com'
     
   skip-domain:
     - 'Mijia Cloud'

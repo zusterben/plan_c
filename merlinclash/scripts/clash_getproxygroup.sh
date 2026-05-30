@@ -1,20 +1,16 @@
 #!/bin/sh
 
 source /jffs/softcenter/scripts/base.sh
+source /jffs/softcenter/scripts/clash_base.sh
 eval $(dbus export merlinclash_)
 alias echo_date='echo 【$(date +%Y年%m月%d日\ %X)】:'
-get(){
-	a=$(echo $(dbus get $1))
-	a=$(echo $(dbus get $1))
-	echo $a
-}
-yamlname=$(get merlinclash_yamlsel)
+
+yamlname=$(get merlinclash_set_yamlsel_start)
 #配置文件路径
 yamlpath=/jffs/softcenter/merlinclash/yaml_use/$yamlname.yaml
 lan_ipaddr=$(nvram get lan_ipaddr)
-clash_type=$(/jffs/softcenter/bin/clash -v | grep Meta)
 #提取配置认证码
-if [ -s "$yamlpath" ] ; then
+if [ -s "$yamlpath" ] && [ "$(pidof clash)" -a "$(netstat -anp | grep clash | head -n 5)" ]; then
 	rm -rf /tmp/upload/*.mark
 	secret=$(cat $yamlpath | awk '/secret:/{print $2}' | sed 's/"//g')
 	#提取配置监听端口
@@ -22,11 +18,6 @@ if [ -s "$yamlpath" ] ; then
 	
 	curl -s -X GET "http://$lan_ipaddr:$ecport/proxies" -H "Authorization: Bearer $secret" | sed 's/\},/\},\n/g'  | grep "Selector" |grep -Eo "name.*" > /tmp/upload/${yamlname}.mark
 	filename=/tmp/upload/${yamlname}.mark
-
-	#filename=$dirtmp/mark/${yamlname}_new.txt
-	markMD5tmp=$(md5sum $yamlpath|awk '{print $1}')
-	
-	dbus set merlinclash_mark_MD52="$markMD5tmp"
 
 		rm -rf /tmp/upload/proxygroups.txt
 		rm -rf /tmp/upload/proxytype.txt
@@ -45,28 +36,43 @@ if [ -s "$yamlpath" ] ; then
 		sed -i '/GLOBAL/d' /tmp/upload/proxygroups.txt
 		sed -i "1i\REJECT" /tmp/upload/proxygroups.txt
 		sed -i "1i\DIRECT" /tmp/upload/proxygroups.txt
-		dbus set merlinclash_mark_MD51="$markMD5tmp"
-		
-
-	#fi	
-		
-		echo "SRC-IP-CIDR" >> /tmp/upload/proxytype.txt
-		echo "IP-CIDR" >> /tmp/upload/proxytype.txt
-		echo "DOMAIN-SUFFIX" >> /tmp/upload/proxytype.txt
+		#插入规则类型
 		echo "DOMAIN" >> /tmp/upload/proxytype.txt
+		echo "DOMAIN-SUFFIX" >> /tmp/upload/proxytype.txt
 		echo "DOMAIN-KEYWORD" >> /tmp/upload/proxytype.txt
+		echo "DOMAIN-WILDCARD" >> /tmp/upload/proxytype.txt
+		echo "DOMAIN-REGEX" >> /tmp/upload/proxytype.txt
+		echo "GEOSITE" >> /tmp/upload/proxytype.txt
+
+		echo "IP-CIDR" >> /tmp/upload/proxytype.txt
+		echo "SRC-IP-CIDR" >> /tmp/upload/proxytype.txt	
+		echo "IP-ASN" >> /tmp/upload/proxytype.txt
+		echo "SRC-IP-ASN" >> /tmp/upload/proxytype.txt
+		echo "IP-SUFFIX" >> /tmp/upload/proxytype.txt
+		echo "SRC-IP-SUFFIX" >> /tmp/upload/proxytype.txt
+		echo "GEOIP" >> /tmp/upload/proxytype.txt
+		echo "SRC-GEOIP" >> /tmp/upload/proxytype.txt
+
 		echo "DST-PORT" >> /tmp/upload/proxytype.txt
 		echo "SRC-PORT" >> /tmp/upload/proxytype.txt
-		echo "SCRIPT" >> /tmp/upload/proxytype.txt
-		echo "GEOIP" >> /tmp/upload/proxytype.txt
-		if [ -n "$clash_type" ]; then
-			echo "AND" >> /tmp/upload/proxytype.txt
-			echo "OR" >> /tmp/upload/proxytype.txt
-			echo "NOT" >> /tmp/upload/proxytype.txt
-			echo "IN-TYPE" >> /tmp/upload/proxytype.txt
-			echo "GEOSITE" >> /tmp/upload/proxytype.txt
-		fi
-		
+
+		echo "IN-TYPE" >> /tmp/upload/proxytype.txt
+		echo "IN-PORT" >> /tmp/upload/proxytype.txt
+		echo "IN-USER" >> /tmp/upload/proxytype.txt
+		echo "IN-NAME" >> /tmp/upload/proxytype.txt
+
+		echo "AND" >> /tmp/upload/proxytype.txt
+		echo "OR" >> /tmp/upload/proxytype.txt
+		echo "NOT" >> /tmp/upload/proxytype.txt
+
+		echo "NETWORK" >> /tmp/upload/proxytype.txt
+		echo "DSCP" >> /tmp/upload/proxytype.txt
+		echo "SUB-RULE" >> /tmp/upload/proxytype.txt
+else
+	rm -rf /tmp/upload/proxygroups.txt
+	rm -rf /tmp/upload/proxytype.txt
+	echo "请启动插件" >> /tmp/upload/proxytype.txt
+	echo "请启动插件" >> /tmp/upload/proxygroups.txt		
 fi
 
 http_response $1
