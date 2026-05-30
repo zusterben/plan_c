@@ -1287,7 +1287,7 @@ function get_clash_status_front2(id) {
 		}
 	}
 	function reload_Soft_Center() {
-		location.href = "/Module_Softcenter.asp";
+		location.href = "/Main_Soft_center.asp";
 	}
 	function load_cron_params() {
 		function addOptions(selectors, options) {
